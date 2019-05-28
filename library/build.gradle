@@ -12,18 +12,67 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // 注意此处有顺序要求
+                arguments = [targetModuleName: getModuleName().replace("\"", "\'")]
+                arguments = [eventBusIndex: 'com.handy.common.MyEventBusIndex']
+                arguments = [AROUTER_MODULE_NAME: getModuleName().replace("\"", "\'")]
+            }
+        }
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'arm64-v8a', 'armeabi', 'armeabi-v7a', 'x86', 'x86_64'
+        }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
-        release {
-            minifyEnabled false
+        debug {
+            minifyEnabled false  // 混淆
+            zipAlignEnabled true    // Zipalign优化
+            shrinkResources false    // 移除无用的resource文件
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false  // 混淆
+            zipAlignEnabled true    // Zipalign优化
+            shrinkResources false    // 移除无用的resource文件
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        android.libraryVariants.all { variant ->
+            variant.outputs.all {
+                if (outputFileName.endsWith('.aar')) {
+                    if (variant.buildType.name == 'debug') {
+                        outputFileName = "${getModuleName()}_V${defaultConfig.versionName}_${releaseTime()}_Debug.aar"
+                    } else if (variant.buildType.name == 'release') {
+                        outputFileName = "${getModuleName()}_V${defaultConfig.versionName}_${releaseTime()}_Release.aar"
+                    }
+                }
+            }
         }
     }
 
     sourceSets {
         main {
-            res.srcDirs = ['src/main/res/']
+            jniLibs.srcDirs = ['libs']
             assets.srcDirs = ['src/main/assets/']
+            res.srcDirs = ['src/main/res/']
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
         }
     }
 }
@@ -31,13 +80,58 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // AndroidSupport
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //==============================
+    //          官方支持库
+    //==============================
+    api 'com.android.support:design:28.0.0'
+    api 'com.android.support:support-v4:28.0.0'
+    api 'com.android.support:appcompat-v7:28.0.0'
 
+    //==============================
+    //          测试库
+    //==============================
     // Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //==============================
+    //          基础库
+    //==============================
+    // HandyBase - https://github.com/Handy045/HandyBasic
+    // 已依赖：AndroidUtilCode、Bugly、EventBus、DBFlow、BGASwipeBackLayout
+    api 'com.github.Handy045:HandyBasic:1.0.0'
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.1.1'
+    annotationProcessor 'com.github.Raizlabs.DBFlow:dbflow-processor:4.2.4'
+
+    //==============================
+    //          框架库
+    //==============================
+
+    //==============================
+    //          控件库
+    //==============================
+    // HandyTitleBar - https://github.com/Handy045/HandyTitleBar
+    api 'com.github.Handy045:HandyTitleBar:1.4.0'
+}
+
+/**
+ * 获取当前Module名称
+ */
+static String getModuleName() {
+    return "HandyFrame"
+}
+
+/**
+ * 获取当前系统时间
+ */
+static def releaseTime() {
+    String data = new Date().format("yyyy-MM-dd HH:mm", TimeZone.getTimeZone("GMT+08:00"))
+    data = data.replace(":", "")
+    data = data.replace("-", "")
+    data = data.replace(" ", "")
+    data = data.substring(2)
+    return data
 }
 
 //-------------------- jitPack生成文档 --------------------
