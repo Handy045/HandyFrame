@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.handy.frame.R;
-import com.handy.frame.base.LocalBaseActivity;
+import com.handy.frame.base.FrameActivity;
 import com.handy.frame.util.VerificationCodeUtils;
 
 import java.util.HashMap;
@@ -28,7 +28,7 @@ import java.util.HashMap;
  * @date Created in 2019-04-18 16:26
  * @modified By liujie
  */
-public abstract class BaseLoginActivity extends LocalBaseActivity {
+public abstract class BaseLoginActivity extends FrameActivity {
 
     {
         isUseSwipeBackFinish = false;

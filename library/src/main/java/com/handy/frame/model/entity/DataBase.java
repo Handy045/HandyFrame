@@ -14,5 +14,5 @@ import com.raizlabs.android.dbflow.annotation.Database;
 @Database(version = DataBase.VERSION, name = DataBase.NAME)
 public class DataBase {
     static final int VERSION = 1;
-    static final String NAME = BuildConfig.MODULE_NAME;
+    static final String NAME = BuildConfig.HandyFrame;
 }

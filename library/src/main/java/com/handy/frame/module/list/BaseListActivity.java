@@ -15,9 +15,8 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.handy.frame.R;
-import com.handy.frame.base.LocalBaseActivity;
-import com.handy.titlebar.HandyTitleBar;
-import com.handy.titlebar.entity.Action;
+import com.handy.frame.base.FrameActivity;
+import com.handy.widget.titlebar.HandyTitleBar;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
@@ -35,7 +34,7 @@ import java.util.List;
  * @date Created in 2019-04-25 09:48
  * @modified By liujie
  */
-public abstract class BaseListActivity<T> extends LocalBaseActivity {
+public abstract class BaseListActivity<T> extends FrameActivity {
 
     protected enum SrlState {
         /**
@@ -90,16 +89,7 @@ public abstract class BaseListActivity<T> extends LocalBaseActivity {
     @Override
     public void initViewHDB(@Nullable Bundle savedInstanceState) {
         super.initViewHDB(savedInstanceState);
-        titlebar.addLeftAction(new Action() {
-            {
-                this.setImageSrc(R.drawable.hdb_back, R.color.hdb_white, R.color.hdb_orange500);
-            }
-
-            @Override
-            public void onClick() {
-                finish();
-            }
-        });
+        initActionBar(titlebar, "资源列表");
 
         srlRefresh.setEnableRefresh(isNeedRefresh);
         if (isNeedRefresh) {

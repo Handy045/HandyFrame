@@ -11,7 +11,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.handy.frame.R;
-import com.handy.frame.base.LocalBaseActivity;
+import com.handy.frame.base.FrameActivity;
 
 import java.lang.reflect.Field;
 
@@ -26,7 +26,7 @@ import cn.bingoogolapple.bgabanner.BGALocalImageSize;
  * @date Created in 2019/4/17 5:07 PM
  * @modified By liujie
  */
-public abstract class BaseGuideActivity extends LocalBaseActivity {
+public abstract class BaseGuideActivity extends FrameActivity {
 
     {
         isUseSwipeBackFinish = false;
