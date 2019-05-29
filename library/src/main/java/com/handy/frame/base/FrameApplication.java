@@ -7,12 +7,11 @@ import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.baidu.mapapi.SDKInitializer;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.KeyboardUtils;
 import com.dou361.dialogui.DialogUIUtils;
-import com.handy.base.app.BaseApplication;
-import com.handy.base.utils.PermissionsUtils;
+import com.handy.basic.app.BaseApplication;
+import com.handy.basic.utils.PermissionsUtils;
 import com.handy.frame.util.GlideAlbumLoader;
 import com.handy.frame.util.SweetDialogClient;
 import com.raizlabs.android.dbflow.config.FlowManager;
@@ -32,11 +31,9 @@ import java.util.Locale;
  * @date Created in 2018/12/3 16:21
  * @modified By LiuJie
  */
-public class LocalBaseApplication extends BaseApplication {
+public class FrameApplication extends BaseApplication {
 
     {
-        buglyAppId = "";
-
         //更新权限扫描的权限集合
         PermissionsUtils.setPermissions(new ArrayList<String>() {{
             add(Manifest.permission.INTERNET);
@@ -115,13 +112,6 @@ public class LocalBaseApplication extends BaseApplication {
         // TODO: 2019-05-08 DialogUI 初始化
         try {
             DialogUIUtils.init(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // TODO: 2019-05-08 BaiduMap 初始化
-        try {
-            SDKInitializer.initialize(getApplicationContext());
         } catch (Exception e) {
             e.printStackTrace();
         }

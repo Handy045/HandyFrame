@@ -1,7 +1,7 @@
 package com.handy.frame.base;
 
 
-import com.handy.base.app.BaseFragment;
+import com.handy.basic.app.BaseFragment;
 
 /**
  * Fragment基本类
@@ -11,6 +11,6 @@ import com.handy.base.app.BaseFragment;
  * @date Created in 2018/12/3 16:21
  * @modified By LiuJie
  */
-public abstract class LocalBaseFragment extends BaseFragment {
+public class FrameFragment extends BaseFragment {
 
 }
