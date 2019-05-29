@@ -36,6 +36,8 @@ android {
 
     buildTypes {
         debug {
+            buildConfigField "String", getModuleName(), "\"${getModuleName()}\""
+
             minifyEnabled false  // 混淆
             zipAlignEnabled true    // Zipalign优化
             shrinkResources false    // 移除无用的resource文件
@@ -44,6 +46,8 @@ android {
         }
 
         release {
+            buildConfigField "String", getModuleName(), "\"${getModuleName()}\""
+
             minifyEnabled false  // 混淆
             zipAlignEnabled true    // Zipalign优化
             shrinkResources false    // 移除无用的resource文件
@@ -68,7 +72,7 @@ android {
         main {
             jniLibs.srcDirs = ['libs']
             assets.srcDirs = ['src/main/assets/']
-            res.srcDirs = ['src/main/res/', 'src/main/res-theme/']
+            res.srcDirs = ['src/main/res/', 'src/main/res-icon-google/', 'src/main/res-theme-blue/']
         }
     }
 
@@ -88,6 +92,8 @@ dependencies {
     api 'com.android.support:design:28.0.0'
     api 'com.android.support:support-v4:28.0.0'
     api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.android.support:cardview-v7:28.0.0'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
 
     //==============================
     //          测试库
@@ -114,10 +120,22 @@ dependencies {
     // TODO ArouterApi - https://github.com/alibaba/ARouter
     api 'com.alibaba:arouter-api:1.4.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    // TODO Rxjava - https://github.com/ReactiveX/RxJava
+    api "io.reactivex.rxjava2:rxjava:2.2.8"
+    // TODO Rxandroid - https://github.com/ReactiveX/Rxandroid
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    // TODO Rxlife - https://github.com/liujingxing/RxLife
+    api 'com.rxjava.rxlife:rxlife:1.0.5'
 
     //==============================
     //          功能库
     //==============================
+    // TODO HandyQRCode - https://github.com/Handy045/HandyQRCode
+    api 'com.github.Handy045:HandyQRCode:1.1.3'
+    // TODO HandyKeepAlive - https://github.com/Handy045/HandyKeepAlive
+    api 'com.github.Handy045:HandyKeepAlive:1.0.1'
+    // TODO HandyAdapter  https://github.com/Handy045/HandyAdapter
+    api 'com.github.Handy045:HandyAdapter:1.0.5'
     // TODO LuBan - https://github.com/Curzibn/Luban
     api 'top.zibin:Luban:1.1.8'
     // TODO Glide - https://github.com/bumptech/glide
@@ -129,10 +147,8 @@ dependencies {
     api 'com.daimajia.androidanimations:library:2.3@aar'
     // TODO DebugDB - https://github.com/amitshekhariitbhu/Android-Debug-Database
     api 'com.amitshekhar.android:debug-db:1.0.6'
-    // TODO HandyQRCode - https://github.com/Handy045/HandyQRCode
-    api 'com.github.Handy045:HandyQRCode:1.1.3'
-    // TODO HandyKeepAlive - https://github.com/Handy045/HandyKeepAlive
-    api 'com.github.Handy045:HandyKeepAlive:1.0.1'
+    // TODO BaseRecyclerViewAdapterHelper  https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
 
     //==============================
     //          控件库
