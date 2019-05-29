@@ -1,9 +1,7 @@
 package com.handy.frame.app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.handy.frame.R;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
