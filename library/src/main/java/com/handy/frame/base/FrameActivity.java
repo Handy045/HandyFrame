@@ -51,7 +51,7 @@ public class FrameActivity extends BaseActivity {
 
             handyTitleBar.addLeftAction(new Action() {
                 {
-                    setImageSrc(R.drawable.google_arrow_back_ios, R.color.black0, R.color.orange100);
+                    setImageSrc(R.drawable.google_arrow_back_ios, R.color.hf_black0, R.color.hf_orange100);
                 }
 
                 @Override
