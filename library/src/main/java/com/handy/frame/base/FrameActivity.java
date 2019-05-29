@@ -5,10 +5,10 @@ import android.view.View;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
-import com.handy.base.app.BaseActivity;
+import com.handy.basic.app.BaseActivity;
 import com.handy.frame.R;
-import com.handy.titlebar.HandyTitleBar;
-import com.handy.titlebar.entity.Action;
+import com.handy.widget.titlebar.HandyTitleBar;
+import com.handy.widget.titlebar.entity.Action;
 
 /**
  * Activity基本类
@@ -18,7 +18,7 @@ import com.handy.titlebar.entity.Action;
  * @date Created in 2018/12/3 16:21
  * @modified By LiuJie
  */
-public class LocalBaseActivity extends BaseActivity {
+public class FrameActivity extends BaseActivity {
 
     //============================================================
     //  初始化标题栏
@@ -51,12 +51,12 @@ public class LocalBaseActivity extends BaseActivity {
 
             handyTitleBar.addLeftAction(new Action() {
                 {
-                    setImageSrc(R.drawable.hdb_back, R.color.hdb_white, R.color.hdb_orange500);
+                    setImageSrc(R.drawable.google_arrow_back_ios, R.color.black0, R.color.orange100);
                 }
 
                 @Override
                 public void onClick() {
-
+                    finish();
                 }
             });
         } else {
