@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hf_img_login_bg">
+
+    <RelativeLayout
+        android:id="@+id/cl_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/cl_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="2">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/hf_distance_xxlarge"
+            android:src="@drawable/hf_icon_login_logo"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_appname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/hf_distance_micro"
+            android:text="@string/app_name"
+            android:textColor="@color/hf_black0"
+            android:textSize="@dimen/hf_font_xxlarge" />
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_info"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/hf_distance_xxlarge"
+        android:paddingRight="@dimen/hf_distance_xxlarge"
+        app:layout_constraintBottom_toTopOf="@id/btn_signin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_logo"
+        app:layout_constraintVertical_weight="2">
+
+        <ImageView
+            android:id="@+id/iv_username"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/hf_distance_xxlarge"
+            android:src="@drawable/hf_icon_login_user"
+            app:layout_constraintBottom_toBottomOf="@id/edt_username"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edt_username"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edt_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/hf_distance_micro"
+            android:layout_marginEnd="@dimen/hf_distance_xxlarge"
+            android:background="@color/hf_transparent"
+            android:gravity="center_vertical"
+            android:hint="请输入登录名"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:lines="1"
+            android:padding="@dimen/hf_distance_medium"
+            android:textColorHint="@color/hf_black40"
+            android:textSize="@dimen/hf_font_medium"
+            app:layout_constraintBottom_toTopOf="@id/line_username"
+            app:layout_constraintLeft_toRightOf="@id/iv_username"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="Autofill" />
+
+        <View
+            android:id="@+id/line_username"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/hf_blue100"
+            app:layout_constraintBottom_toTopOf="@id/line_center1"
+            app:layout_constraintLeft_toLeftOf="@id/iv_username"
+            app:layout_constraintRight_toRightOf="@id/edt_username" />
+
+        <View
+            android:id="@+id/line_center1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/hf_distance_xlarge"
+            android:background="@color/hf_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_password"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/hf_icon_login_safe"
+            app:layout_constraintBottom_toBottomOf="@id/edt_password"
+            app:layout_constraintLeft_toLeftOf="@id/iv_username"
+            app:layout_constraintRight_toRightOf="@id/iv_username"
+            app:layout_constraintTop_toTopOf="@id/edt_password"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/hf_transparent"
+            android:gravity="center_vertical"
+            android:hint="请输入登录密码"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:padding="@dimen/hf_distance_medium"
+            android:textColorHint="@color/hf_black40"
+            android:textSize="@dimen/hf_font_medium"
+            app:layout_constraintLeft_toLeftOf="@id/edt_username"
+            app:layout_constraintRight_toRightOf="@id/edt_username"
+            app:layout_constraintTop_toBottomOf="@id/line_center1"
+            tools:ignore="Autofill" />
+
+        <View
+            android:id="@+id/line_password"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/hf_blue100"
+            app:layout_constraintLeft_toLeftOf="@id/iv_password"
+            app:layout_constraintRight_toRightOf="@id/edt_password"
+            app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+        <View
+            android:id="@+id/line_center2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/hf_distance_xlarge"
+            android:background="@color/hf_transparent"
+            app:layout_constraintLeft_toLeftOf="@id/line_password"
+            app:layout_constraintRight_toRightOf="@id/line_password"
+            app:layout_constraintTop_toBottomOf="@id/line_password" />
+
+        <ImageView
+            android:id="@+id/iv_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/hf_distance_small"
+            android:padding="@dimen/hf_distance_least"
+            app:layout_constraintBottom_toBottomOf="@id/edt_verification"
+            app:layout_constraintRight_toLeftOf="@id/edt_verification"
+            app:layout_constraintTop_toTopOf="@id/edt_verification"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edt_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hf_widget_sc"
+            android:ems="4"
+            android:gravity="center"
+            android:hint="验证码"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:lines="1"
+            android:padding="@dimen/hf_distance_small"
+            android:textSize="@dimen/hf_font_medium"
+            app:layout_constraintRight_toRightOf="@id/line_username"
+            app:layout_constraintTop_toBottomOf="@id/line_center2"
+            tools:ignore="Autofill" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/hf_distance_large"
+        android:background="@drawable/hf_default_btn_sc"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="@dimen/hf_distance_large"
+        android:text="登  录"
+        android:textColor="@color/hf_black0"
+        android:textSize="@dimen/hf_font_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_info" />
+</android.support.constraint.ConstraintLayout>

@@ -3,6 +3,6 @@
 <!-- EditText 光标样式（颜色、宽度） -->
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/hf_colorPrimary" />
+    <solid android:color="@color/hf_blue100" />
     <size android:width="2dp" />
 </shape>
