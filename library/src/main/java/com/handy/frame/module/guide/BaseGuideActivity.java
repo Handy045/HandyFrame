@@ -46,7 +46,7 @@ public abstract class BaseGuideActivity extends FrameActivity {
         // 去除状态栏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.frame_activity_guide);
+        setContentView(R.layout.hf_activity_guide);
         bannerBackground = findViewById(R.id.banner_background);
         bannerForeground = findViewById(R.id.banner_foreground);
 

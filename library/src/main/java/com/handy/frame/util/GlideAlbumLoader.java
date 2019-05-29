@@ -42,8 +42,8 @@ public class GlideAlbumLoader implements AlbumLoader {
     @Override
     public void load(ImageView imageView, String url) {
         RequestOptions myOptions = new RequestOptions()
-                .error(R.drawable.frame_icon_imgerror)
-                .placeholder(R.drawable.frame_icon_imgsearch)
+                .error(R.drawable.hf_icon_imgerror)
+                .placeholder(R.drawable.hf_icon_imgsearch)
                 .fitCenter()
                 .diskCacheStrategy(DiskCacheStrategy.NONE);
 
