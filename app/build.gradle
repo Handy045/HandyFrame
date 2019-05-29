@@ -37,7 +37,6 @@ android {
                 // 注意此处有顺序要求
                 arguments = [targetModuleName: getModuleName().replace("\"", "\'")]
                 arguments = [eventBusIndex: 'com.handy.common.MyEventBusIndex']
-                arguments = [AROUTER_MODULE_NAME: getModuleName().replace("\"", "\'")]
             }
         }
 
@@ -111,9 +110,6 @@ dependencies {
     implementation project(path: ':library')
     annotationProcessor 'com.github.Raizlabs.DBFlow:dbflow-processor:4.2.4'
     annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.1.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }
 
 /**

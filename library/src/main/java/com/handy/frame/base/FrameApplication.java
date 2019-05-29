@@ -6,21 +6,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.KeyboardUtils;
-import com.dou361.dialogui.DialogUIUtils;
 import com.handy.basic.app.BaseApplication;
 import com.handy.basic.utils.PermissionsUtils;
-import com.handy.frame.util.GlideAlbumLoader;
 import com.handy.frame.util.SweetDialogClient;
 import com.raizlabs.android.dbflow.config.FlowManager;
-import com.rey.material.app.ThemeManager;
-import com.yanzhenjie.album.Album;
-import com.yanzhenjie.album.AlbumConfig;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 
 /**
@@ -91,41 +83,9 @@ public class FrameApplication extends BaseApplication {
             e.printStackTrace();
         }
 
-        // TODO: 2019-05-08 ARouter 初始化
-        try {
-            if (AppUtils.isAppDebug()) {
-                ARouter.openLog();
-                ARouter.openDebug();
-            }
-            ARouter.init(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         // TODO: 2019-05-08 DBFlow 初始化
         try {
             FlowManager.init(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // TODO: 2019-05-08 DialogUI 初始化
-        try {
-            DialogUIUtils.init(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // TODO: 2019-05-08 Material 初始化
-        try {
-            ThemeManager.init(this, 2, 0, null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // TODO: 2019-05-08 Album 初始化
-        try {
-            Album.initialize(AlbumConfig.newBuilder(this).setAlbumLoader(new GlideAlbumLoader()).setLocale(Locale.getDefault()).build());
         } catch (Exception e) {
             e.printStackTrace();
         }
