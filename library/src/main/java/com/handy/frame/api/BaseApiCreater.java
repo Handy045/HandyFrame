@@ -1,13 +1,13 @@
 package com.handy.frame.api;
 
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.NetworkUtils;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.handy.frame.config.FrameConfig;
-import com.trello.rxlifecycle2.android.ActivityEvent;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import com.rxjava.rxlife.RxLife;
 
 import java.io.Serializable;
 
@@ -28,13 +28,13 @@ import io.reactivex.schedulers.Schedulers;
  */
 public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListener<RESPONSE, RESULT>, Serializable {
 
-    private RxAppCompatActivity activity;
+    private AppCompatActivity activity;
 
     private String progressInfo = null;
     private DialogListener dialogListener = null;
     private ResultListener<RESULT> resultListener = null;
 
-    public BaseApiCreater(@NonNull RxAppCompatActivity activity) {
+    public BaseApiCreater(@NonNull AppCompatActivity activity) {
         this.activity = activity;
         this.dialogListener = initDialogBuilder(activity);
     }
@@ -70,7 +70,7 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
             } finally {
                 emitter.onComplete();
             }
-        }).map(this::analyzeResponse).compose(activity.bindUntilEvent(ActivityEvent.DESTROY)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<RESULT>() {
+        }).map(this::analyzeResponse).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).as(RxLife.as(activity)).subscribe(new Observer<RESULT>() {
             @Override
             public void onSubscribe(Disposable d) {
                 if (activity.isFinishing()) {
@@ -117,7 +117,7 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
     }
 
     @Override
-    public DialogListener initDialogBuilder(@NonNull RxAppCompatActivity activity) {
+    public DialogListener initDialogBuilder(@NonNull AppCompatActivity activity) {
         return new BaseDialogBuilder(activity);
     }
 

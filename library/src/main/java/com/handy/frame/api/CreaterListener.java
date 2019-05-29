@@ -1,8 +1,7 @@
 package com.handy.frame.api;
 
 import android.support.annotation.NonNull;
-
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import io.reactivex.ObservableEmitter;
 
@@ -18,7 +17,7 @@ public interface CreaterListener<RESPONSE, RESULT> {
     /**
      * 准备提示框控件
      */
-    DialogListener initDialogBuilder(@NonNull RxAppCompatActivity activity);
+    DialogListener initDialogBuilder(@NonNull AppCompatActivity activity);
 
     /**
      * 调用接口

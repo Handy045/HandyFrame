@@ -1,7 +1,7 @@
 package com.handy.frame.api;
 
-import android.app.Activity;
 import android.app.Dialog;
+import android.support.v7.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.ObjectUtils;
 import com.handy.frame.util.SweetDialogUtil;
@@ -17,9 +17,9 @@ import com.handy.frame.util.SweetDialogUtil;
 public class BaseDialogBuilder implements DialogListener {
 
     private Dialog dialog;
-    private Activity activity;
+    private AppCompatActivity activity;
 
-    public BaseDialogBuilder(Activity activity) {
+    public BaseDialogBuilder(AppCompatActivity activity) {
         this.activity = activity;
     }
 
