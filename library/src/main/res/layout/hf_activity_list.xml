@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.handy.titlebar.HandyTitleBar
+    <com.handy.widget.titlebar.HandyTitleBar
         android:id="@+id/titlebar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
