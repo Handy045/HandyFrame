@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.handy.frame">
 
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信-->
@@ -6,5 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取WIFI状态-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 读写sdcard，storage等等 -->
+
+    <application
+        android:networkSecurityConfig="@xml/hf_network_security_config"
+        tools:targetApi="n" />
 </manifest>
 
