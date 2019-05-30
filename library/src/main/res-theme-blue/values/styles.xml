@@ -60,9 +60,9 @@
     <!-- 应用启动页(StartingWindow)的theme -->
     <style name="HF_StartActivityTheme" parent="HF_FullScreenActivityTheme">
         <!-- 可以设置成纯颜色（设置一个和Activity UI相似的背景） -->
-        <!--<item name="android:windowBackground">@color/hf_black0</item>-->
+        <item name="android:windowBackground">@color/hf_color_window</item>
         <!--也可以设置成一张图片 -->
-        <item name="android:windowBackground">@drawable/hf_img_guide_bg</item>
+        <!--<item name="android:windowBackground">@drawable/hf_img_guide_bg</item>-->
     </style>
 
     <!--==================== 标题栏样式 ====================-->
