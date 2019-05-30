@@ -1,4 +1,22 @@
 <resources>
+
+    <!--=============================================-->
+    <!--                 主体颜色                     -->
+    <!--=============================================-->
+    <!-- 主题色 -->
+    <color name="theme">@color/hf_blue100</color>
+    <!-- 辅助色 -->
+    <color name="secondary">@color/hf_orange100</color>
+    <!-- 着重色 -->
+    <color name="stress">@color/hf_red100</color>
+    <!-- 通用字体色 -->
+    <color name="font_universal">@color/hf_font100</color>
+    <!-- 辅助字体色 -->
+    <color name="font_secondary">@color/hf_black40</color>
+
+    <!--=============================================-->
+    <!--                  默认色卡                    -->
+    <!--=============================================-->
     <color name="hf_blue100">#1b82d1</color>
     <color name="hf_blue50">#8dc0e8</color>
     <color name="hf_blue30">#bad9f1</color>
