@@ -4,15 +4,15 @@
     <!--                 主体颜色                     -->
     <!--=============================================-->
     <!-- 主题色 -->
-    <color name="theme">@color/hf_blue100</color>
+    <color name="hf_color_theme">@color/hf_blue100</color>
     <!-- 辅助色 -->
-    <color name="secondary">@color/hf_orange100</color>
+    <color name="hf_color_secondary">@color/hf_orange100</color>
     <!-- 着重色 -->
-    <color name="stress">@color/hf_red100</color>
+    <color name="hf_color_stress">@color/hf_red100</color>
     <!-- 通用字体色 -->
-    <color name="font_universal">@color/hf_font100</color>
+    <color name="hf_color_font_universal">@color/hf_font100</color>
     <!-- 辅助字体色 -->
-    <color name="font_secondary">@color/hf_black40</color>
+    <color name="hf_color_font_secondary">@color/hf_black40</color>
 
     <!--=============================================-->
     <!--                  默认色卡                    -->
