@@ -1,3 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Application默认主题 -->
+    <style name="HF_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- colorPrimary 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色 -->
+        <item name="colorPrimary">@color/hf_blue100</item>
+
+        <!-- colorPrimaryDark 应用的主要暗色调，statusBarColor默认使用该颜色 -->
+        <item name="colorPrimaryDark">@color/hf_blue100</item>
+
+        <!-- statusBarColor 状态栏颜色，默认使用colorPrimaryDark -->
+
+        <!-- windowBackground 窗口背景颜色 -->
+        <item name="android:windowBackground">@color/hf_black0</item>
+
+        <!-- navigationBarColor 底部栏颜色 -->
+
+        <!-- colorForeground 应用的前景色，ListView的分割线，switch滑动区默认使用该颜色 -->
+
+        <!-- colorBackground 应用的背景色，popMenu的背景默认使用该颜色 -->
+
+        <!-- colorAccent CheckBox，RadioButton，SwitchCompat等一般控件的选中效果默认采用该颜色 -->
+        <item name="colorAccent">@color/hf_red100</item>
+
+        <!-- colorControlNormal CheckBox，RadioButton，SwitchCompat等默认状态的颜色。 -->
+
+        <!-- colorControlHighlight 控件按压时的色调 -->
+
+        <!-- colorControlActivated 控件选中时的颜色，默认使用colorAccent -->
+
+        <!-- colorButtonNormal 默认按钮的背景颜色 -->
+
+        <!-- editTextColor：默认EditView输入框字体的颜色。 -->
+
+        <!-- textColor Button，textView的文字颜色 -->
+
+        <!-- textColorPrimaryDisableOnly RadioButton checkbox等控件的文字 -->
+
+        <!-- textColorPrimary 应用的主要文字颜色，actionBar的标题文字默认使用该颜色 -->
+
+        <!-- colorSwitchThumbNormal: switch thumbs 默认状态的颜色. (switch off) -->
+    </style>
+
+    <!-- Activity默认主题 -->
+    <style name="HF_DefaultActivityTheme" parent="HF_AppTheme">
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
+        <item name="android:exported">false</item>
+        <item name="android:launchMode">standard</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:theme">@style/HF_AppTheme</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateAlwaysHidden</item>
+    </style>
+
+    <!-- 全屏Activity的主题 -->
+    <style name="HF_FullScreenActivityTheme" parent="HF_DefaultActivityTheme">
+        <!--设置全屏-->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- 应用启动页(StartingWindow)的theme -->
+    <style name="HF_StartActivityTheme" parent="HF_FullScreenActivityTheme">
+        <!-- 可以设置成纯颜色（设置一个和Activity UI相似的背景） -->
+        <!--<item name="android:windowBackground">@color/frame_start_windowBackgroundColor</item>-->
+        <!--也可以设置成一张图片 -->
+        <item name="android:windowBackground">@drawable/hf_img_guide_bg</item>
+    </style>
+
+    <!--==================== 标题栏样式 ====================-->
+    <style name="HF_Titlebar_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="handy_mainTextColor">@color/hf_black0</item>
+        <item name="handy_subTextColor">@color/hf_black0</item>
+        <item name="handy_titleBarBackground">@color/hf_blue100</item>
+        <item name="handy_statusBarBackgroundColor">@color/hf_blue100</item>
+        <item name="handy_actionTextColor">@color/hf_black0</item>
+    </style>
+
+    <!--==================== 按钮样式 ====================-->
+    <style name="HF_Btn_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:padding">@dimen/hf_distance_large</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/hf_black0</item>
+        <item name="android:background">@drawable/hf_default_btn_sc</item>
+        <item name="android:textSize">@dimen/hf_font_small</item>
+    </style>
 </resources>
