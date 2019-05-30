@@ -5,8 +5,10 @@
     <!--=============================================-->
     <!-- 主题色 -->
     <color name="hf_color_theme">@color/hf_blue100</color>
+    <!-- 主题色_暗 -->
+    <color name="hf_color_theme_dark">@color/hf_blue110</color>
     <!-- 辅助色 -->
-    <color name="hf_color_secondary">@color/hf_orange100</color>
+    <color name="hf_color_assist">@color/hf_orange100</color>
     <!-- 着重色 -->
     <color name="hf_color_stress">@color/hf_red100</color>
     <!-- 通用字体色 -->
@@ -17,6 +19,7 @@
     <!--=============================================-->
     <!--                  默认色卡                    -->
     <!--=============================================-->
+    <color name="hf_blue110">#1565C0</color>
     <color name="hf_blue100">#1b82d1</color>
     <color name="hf_blue50">#8dc0e8</color>
     <color name="hf_blue30">#bad9f1</color>
