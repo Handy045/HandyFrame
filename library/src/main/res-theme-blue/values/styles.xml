@@ -3,15 +3,15 @@
     <!-- Application默认主题 -->
     <style name="HF_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- colorPrimary 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色 -->
-        <item name="colorPrimary">@color/hf_blue100</item>
+        <item name="colorPrimary">@color/hf_color_theme</item>
 
         <!-- colorPrimaryDark 应用的主要暗色调，statusBarColor默认使用该颜色 -->
-        <item name="colorPrimaryDark">@color/hf_blue100</item>
+        <item name="colorPrimaryDark">@color/hf_color_theme_dark</item>
 
         <!-- statusBarColor 状态栏颜色，默认使用colorPrimaryDark -->
 
         <!-- windowBackground 窗口背景颜色 -->
-        <item name="android:windowBackground">@color/hf_black0</item>
+        <item name="android:windowBackground">@color/hf_color_window</item>
 
         <!-- navigationBarColor 底部栏颜色 -->
 
@@ -20,7 +20,7 @@
         <!-- colorBackground 应用的背景色，popMenu的背景默认使用该颜色 -->
 
         <!-- colorAccent CheckBox，RadioButton，SwitchCompat等一般控件的选中效果默认采用该颜色 -->
-        <item name="colorAccent">@color/hf_red100</item>
+        <item name="colorAccent">@color/hf_color_stress</item>
 
         <!-- colorControlNormal CheckBox，RadioButton，SwitchCompat等默认状态的颜色。 -->
 
@@ -60,7 +60,7 @@
     <!-- 应用启动页(StartingWindow)的theme -->
     <style name="HF_StartActivityTheme" parent="HF_FullScreenActivityTheme">
         <!-- 可以设置成纯颜色（设置一个和Activity UI相似的背景） -->
-        <!--<item name="android:windowBackground">@color/frame_start_windowBackgroundColor</item>-->
+        <!--<item name="android:windowBackground">@color/hf_black0</item>-->
         <!--也可以设置成一张图片 -->
         <item name="android:windowBackground">@drawable/hf_img_guide_bg</item>
     </style>
@@ -73,8 +73,8 @@
         <item name="android:focusableInTouchMode">true</item>
         <item name="handy_mainTextColor">@color/hf_black0</item>
         <item name="handy_subTextColor">@color/hf_black0</item>
-        <item name="handy_titleBarBackground">@color/hf_blue100</item>
-        <item name="handy_statusBarBackgroundColor">@color/hf_blue100</item>
+        <item name="handy_titleBarBackground">@color/hf_color_theme</item>
+        <item name="handy_statusBarBackgroundColor">@color/hf_color_theme</item>
         <item name="handy_actionTextColor">@color/hf_black0</item>
     </style>
 
