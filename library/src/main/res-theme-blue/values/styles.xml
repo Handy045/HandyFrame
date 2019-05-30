@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Application默认主题 -->
     <style name="HF_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- colorPrimary 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色 -->
