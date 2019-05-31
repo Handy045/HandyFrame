@@ -5,12 +5,12 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.RelativeLayout;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
-import com.handy.adapter.FragmentPagerAdapter2;
 import com.handy.frame.R;
 import com.handy.frame.base.FrameActivity;
 import com.handy.widget.titlebar.HandyTitleBar;
@@ -63,7 +63,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
         }
 
         viewpager.setOffscreenPageLimit(tabItemEntities.size() - 1);
-        viewpager.setAdapter(new FragmentPagerAdapter2(getSupportFragmentManager()) {
+        viewpager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int i) {
                 return tabItemEntities.get(i).getFragment();
