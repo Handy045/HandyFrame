@@ -71,6 +71,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
+        <item name="handy_isShowCustomStatusBar">true</item>
         <item name="handy_mainTextColor">@color/hf_black0</item>
         <item name="handy_subTextColor">@color/hf_black0</item>
         <item name="handy_titleBarBackground">@color/hf_color_theme</item>
