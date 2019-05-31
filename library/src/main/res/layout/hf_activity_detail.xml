@@ -7,6 +7,8 @@
     <com.handy.widget.titlebar.HandyTitleBar
         android:id="@+id/titlebar"
         style="@style/HF_Titlebar_Style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:handy_mainText="资源详情"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -16,15 +18,15 @@
         android:id="@+id/tablayout"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_46"
+        android:background="@color/hf_black0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlebar"
         app:tabIndicatorColor="@color/hf_color_theme"
         app:tabIndicatorHeight="1dp"
         app:tabSelectedTextColor="@color/hf_color_theme"
         app:tabTextAppearance="@style/HF_TabItem_Text_Style"
-        app:tabTextColor="@color/hf_black80"
-        android:background="@color/hf_black0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titlebar" />
+        app:tabTextColor="@color/hf_black80" />
 
     <View
         android:id="@+id/line"
