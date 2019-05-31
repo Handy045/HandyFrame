@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.blankj.utilcode.util.LogUtils;
@@ -29,6 +30,7 @@ import java.util.List;
 public abstract class BaseDetailActivity extends FrameActivity {
 
     HandyTitleBar titlebar;
+    RelativeLayout rlTop;
     TabLayout tablayout;
     ViewPager viewpager;
     RelativeLayout rlBottom;
@@ -38,6 +40,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hf_activity_detail);
         titlebar = findViewById(R.id.titlebar);
+        rlTop = findViewById(R.id.rl_top);
         tablayout = findViewById(R.id.tablayout);
         viewpager = findViewById(R.id.viewpager);
         rlBottom = findViewById(R.id.rl_bottom);
@@ -47,6 +50,9 @@ public abstract class BaseDetailActivity extends FrameActivity {
     public void initViewHDB(@Nullable Bundle savedInstanceState) {
         super.initViewHDB(savedInstanceState);
         initActionBar(titlebar, "资源列表");
+
+        setTopMenuLayout(rlTop);
+        setBottomMenuLayout(rlBottom);
     }
 
     @Override
@@ -81,6 +87,50 @@ public abstract class BaseDetailActivity extends FrameActivity {
             }
         });
         tablayout.setupWithViewPager(viewpager);
+
+        for (int i = 0; i < tabItemEntities.size(); i++) {
+            TabLayout.Tab tab = tablayout.getTabAt(i);
+            TabItemEntity entity = tabItemEntities.get(i);
+            if (ObjectUtils.isNotEmpty(tab)) {
+                tab.setTag(entity);
+            }
+            if (ObjectUtils.isNotEmpty(entity.getViewNormal()) && ObjectUtils.isNotEmpty(tab)) {
+                //获得每一个tab
+                tab.setCustomView(entity.getViewNormal());
+                if (i == 0 && ObjectUtils.isNotEmpty(entity.getViewSelected())) {
+                    tab.setCustomView(entity.getViewSelected());
+                }
+            }
+        }
+
+        tablayout.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                TabItemEntity entity = (TabItemEntity) tab.getTag();
+                if (ObjectUtils.isNotEmpty(entity) && ObjectUtils.isNotEmpty(entity.getViewNormal())) {
+                    if (ObjectUtils.isNotEmpty(entity.getViewSelected())) {
+                        tab.setCustomView(entity.getViewSelected());
+                    } else {
+                        tab.setCustomView(entity.getViewNormal());
+                    }
+                }
+                viewpager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                TabItemEntity entity = (TabItemEntity) tab.getTag();
+                if (ObjectUtils.isNotEmpty(entity) && ObjectUtils.isNotEmpty(entity.getViewNormal())) {
+                    tab.setCustomView(entity.getViewNormal());
+                }
+                viewpager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     @NonNull
@@ -89,9 +139,22 @@ public abstract class BaseDetailActivity extends FrameActivity {
     protected class TabItemEntity {
         private String tabName;
         private Fragment fragment;
+        private View viewNormal;
+        private View viewSelected;
 
         public TabItemEntity(@NonNull String tabName, @NonNull Fragment fragment) {
             this.tabName = tabName;
+            this.fragment = fragment;
+        }
+
+        public TabItemEntity(@NonNull View viewNormal, @NonNull Fragment fragment) {
+            this.viewNormal = viewNormal;
+            this.fragment = fragment;
+        }
+
+        public TabItemEntity(@NonNull View viewNormal, @NonNull View viewSelected, @NonNull Fragment fragment) {
+            this.viewNormal = viewNormal;
+            this.viewSelected = viewSelected;
             this.fragment = fragment;
         }
 
@@ -103,8 +166,79 @@ public abstract class BaseDetailActivity extends FrameActivity {
             return fragment;
         }
 
+        View getViewNormal() {
+            return viewNormal;
+        }
+
+        View getViewSelected() {
+            return viewSelected;
+        }
+
         TabLayout.Tab getTabItem(TabLayout tabLayout) {
             return tabLayout.newTab().setText(this.tabName);
         }
+    }
+
+    //============================================================
+    //  UI 功能开放
+    //============================================================
+
+    /**
+     * 获取标题栏控件
+     */
+    protected HandyTitleBar getTitlebar() {
+        return titlebar;
+    }
+
+    /**
+     * 设置标题栏文本内容
+     */
+    protected void setTitleBarText(@NonNull String mainText) {
+        titlebar.setMainText(mainText);
+    }
+
+    /**
+     * 设置顶部菜单布局控件，可填充过滤条件
+     */
+    protected void setTopMenuLayout(RelativeLayout relayout) {
+
+    }
+
+    /**
+     * 设置顶部菜单布局控件，可填充过滤条件
+     */
+    protected void setBottomMenuLayout(RelativeLayout relayout) {
+
+    }
+
+    //============================================================
+    //  TabLayout 功能开放
+    //============================================================
+
+    /**
+     * 获取标签栏控件
+     */
+    protected TabLayout getTablayout() {
+        return tablayout;
+    }
+
+    /**
+     * 设置TabLayou模式（TabLayout.MODE_FIXED、TabLayout.MODE_SCROLLABLE）
+     */
+    protected void setTabLayoutMode(int tabMode) {
+        if (tabMode == TabLayout.MODE_FIXED || tabMode == TabLayout.MODE_SCROLLABLE) {
+            tablayout.setTabMode(tabMode);
+        }
+    }
+
+    //============================================================
+    //  ViewPager 功能开放
+    //============================================================
+
+    /**
+     * 获取ViewPager控件
+     */
+    protected ViewPager getViewpager() {
+        return viewpager;
     }
 }
