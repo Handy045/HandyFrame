@@ -22,6 +22,6 @@ public class ListFragment extends FrameFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_info, container);
+        return inflater.inflate(R.layout.fragment_info, null);
     }
 }
