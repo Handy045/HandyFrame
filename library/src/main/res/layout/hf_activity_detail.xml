@@ -19,7 +19,7 @@
         app:tabIndicatorColor="@color/hf_color_theme"
         app:tabIndicatorHeight="1dp"
         app:tabSelectedTextColor="@color/hf_color_theme"
-        app:tabTextAppearance="@style/TaskDetail_TabItem_TextStyle"
+        app:tabTextAppearance="@style/HF_TabItem_Text_Style"
         app:tabTextColor="@color/hf_black80"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
