@@ -55,6 +55,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
         List<TabItemEntity> tabItemEntities = setTabItems();
         if (ObjectUtils.isEmpty(tabItemEntities)) {
             LogUtils.e("lease set the abItems first.");
+            return;
         }
 
         for (TabItemEntity entity : tabItemEntities) {
