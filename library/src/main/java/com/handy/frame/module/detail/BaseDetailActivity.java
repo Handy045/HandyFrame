@@ -82,6 +82,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
         tablayout.setupWithViewPager(viewpager);
     }
 
+    @NonNull
     protected abstract List<TabItemEntity> setTabItems();
 
     protected class TabItemEntity {
