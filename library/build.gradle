@@ -17,7 +17,7 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 // 注意此处有顺序要求
-                arguments = [targetModuleName: getModuleName().replace("\"", "\'")]
+                arguments = [targetModuleName: "\'${getModuleName()}\'"]
                 arguments = [eventBusIndex: 'com.handy.common.MyEventBusIndex']
             }
         }
