@@ -84,7 +84,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
 
     protected abstract List<TabItemEntity> setTabItems();
 
-    class TabItemEntity {
+    protected class TabItemEntity {
         private String tabName;
         private Fragment fragment;
 
