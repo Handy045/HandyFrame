@@ -13,13 +13,17 @@
         android:theme="@style/HF_AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name=".module.main.MainActivity"
             android:theme="@style/HF_DefaultActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".module.detail.DetailActivity"
+            android:theme="@style/HF_DefaultActivityTheme" />
     </application>
 
 </manifest>
