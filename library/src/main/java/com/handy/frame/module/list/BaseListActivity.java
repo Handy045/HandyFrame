@@ -96,7 +96,7 @@ public abstract class BaseListActivity<T> extends FrameActivity {
             srlRefresh.setRefreshHeader(new ClassicsHeader(context));
             srlRefresh.setOnRefreshListener(refreshLayout -> {
                 setAdapterData(new ArrayList<>());
-                slidingListener(SrlState.REFRESH, refreshLayout);
+                onSlidingListener(SrlState.REFRESH, refreshLayout);
             });
         }
 
@@ -104,7 +104,7 @@ public abstract class BaseListActivity<T> extends FrameActivity {
         if (isNeedLoadMore) {
             srlRefresh.setRefreshFooter(new ClassicsFooter(context));
             srlRefresh.setOnLoadMoreListener(refreshLayout -> {
-                slidingListener(SrlState.LOADMORE, refreshLayout);
+                onSlidingListener(SrlState.LOADMORE, refreshLayout);
             });
         }
 
@@ -128,20 +128,6 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     //============================================================
 
     /**
-     * 获取标题栏控件
-     */
-    protected HandyTitleBar getTitlebar() {
-        return titlebar;
-    }
-
-    /**
-     * 设置标题栏文本内容
-     */
-    protected void setTitleBarText(@NonNull String mainText) {
-        titlebar.setMainText(mainText);
-    }
-
-    /**
      * 设置顶部菜单布局控件，可填充过滤条件
      */
     protected void setTopMenuLayout(RelativeLayout relayout) {
@@ -156,15 +142,26 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     }
 
     //============================================================
-    //  SmartRefreshLayout 功能开放
+    //  HandyTitleBar 功能开放
     //============================================================
 
     /**
-     * 获取刷新加载控件
+     * 获取标题栏控件
      */
-    public SmartRefreshLayout getSrlRefresh() {
-        return srlRefresh;
+    protected HandyTitleBar getTitlebar() {
+        return titlebar;
     }
+
+    /**
+     * 设置标题栏文本内容
+     */
+    protected void setTitleBarText(@NonNull String mainText) {
+        titlebar.setMainText(mainText);
+    }
+
+    //============================================================
+    //  SmartRefreshLayout 功能开放
+    //============================================================
 
     /**
      * 结束刷新/加载动画
@@ -208,13 +205,6 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     //============================================================
     //  RecyclerView 功能开放
     //============================================================
-
-    /**
-     * 获取列表控件
-     */
-    public RecyclerView getRvList() {
-        return rvList;
-    }
 
     /**
      * 设置List数据
@@ -271,5 +261,5 @@ public abstract class BaseListActivity<T> extends FrameActivity {
      * @param srlState      SrlState.REFRESH：刷新，SrlState.LOADMORE：加载更多
      * @param refreshLayout 刷新加载控件
      */
-    protected abstract void slidingListener(SrlState srlState, RefreshLayout refreshLayout);
+    protected abstract void onSlidingListener(SrlState srlState, RefreshLayout refreshLayout);
 }

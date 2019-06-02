@@ -96,8 +96,10 @@ public abstract class BaseDetailActivity extends FrameActivity {
             }
             if (ObjectUtils.isNotEmpty(entity.getViewNormal()) && ObjectUtils.isNotEmpty(tab)) {
                 //获得每一个tab
+                tab.setCustomView(null);
                 tab.setCustomView(entity.getViewNormal());
                 if (i == 0 && ObjectUtils.isNotEmpty(entity.getViewSelected())) {
+                    tab.setCustomView(null);
                     tab.setCustomView(entity.getViewSelected());
                 }
             }
@@ -109,21 +111,24 @@ public abstract class BaseDetailActivity extends FrameActivity {
                 TabItemEntity entity = (TabItemEntity) tab.getTag();
                 if (ObjectUtils.isNotEmpty(entity) && ObjectUtils.isNotEmpty(entity.getViewNormal())) {
                     if (ObjectUtils.isNotEmpty(entity.getViewSelected())) {
+                        LogUtils.d("getViewSelected");
+                        tab.setCustomView(null);
                         tab.setCustomView(entity.getViewSelected());
                     } else {
+                        LogUtils.d("getViewNormal");
+                        tab.setCustomView(null);
                         tab.setCustomView(entity.getViewNormal());
                     }
                 }
-                viewpager.setCurrentItem(tab.getPosition());
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 TabItemEntity entity = (TabItemEntity) tab.getTag();
                 if (ObjectUtils.isNotEmpty(entity) && ObjectUtils.isNotEmpty(entity.getViewNormal())) {
+                    tab.setCustomView(null);
                     tab.setCustomView(entity.getViewNormal());
                 }
-                viewpager.setCurrentItem(tab.getPosition());
             }
 
             @Override
@@ -132,9 +137,6 @@ public abstract class BaseDetailActivity extends FrameActivity {
             }
         });
     }
-
-    @NonNull
-    protected abstract List<TabItemEntity> setTabItems();
 
     protected class TabItemEntity {
         private String tabName;
@@ -184,20 +186,6 @@ public abstract class BaseDetailActivity extends FrameActivity {
     //============================================================
 
     /**
-     * 获取标题栏控件
-     */
-    protected HandyTitleBar getTitlebar() {
-        return titlebar;
-    }
-
-    /**
-     * 设置标题栏文本内容
-     */
-    protected void setTitleBarText(@NonNull String mainText) {
-        titlebar.setMainText(mainText);
-    }
-
-    /**
      * 设置顶部菜单布局控件，可填充过滤条件
      */
     protected void setTopMenuLayout(RelativeLayout relayout) {
@@ -212,15 +200,26 @@ public abstract class BaseDetailActivity extends FrameActivity {
     }
 
     //============================================================
-    //  TabLayout 功能开放
+    //  HandyTitleBar 功能开放
     //============================================================
 
     /**
-     * 获取标签栏控件
+     * 获取标题栏控件
      */
-    protected TabLayout getTablayout() {
-        return tablayout;
+    protected HandyTitleBar getTitlebar() {
+        return titlebar;
     }
+
+    /**
+     * 设置标题栏文本内容
+     */
+    protected void setTitleBarText(@NonNull String mainText) {
+        titlebar.setMainText(mainText);
+    }
+
+    //============================================================
+    //  TabLayout 功能开放
+    //============================================================
 
     /**
      * 设置TabLayou模式（TabLayout.MODE_FIXED、TabLayout.MODE_SCROLLABLE）
@@ -232,13 +231,9 @@ public abstract class BaseDetailActivity extends FrameActivity {
     }
 
     //============================================================
-    //  ViewPager 功能开放
+    //  子类需要实现的抽象方法
     //============================================================
 
-    /**
-     * 获取ViewPager控件
-     */
-    protected ViewPager getViewpager() {
-        return viewpager;
-    }
+    @NonNull
+    protected abstract List<TabItemEntity> setTabItems();
 }
