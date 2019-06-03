@@ -72,14 +72,14 @@ public abstract class BaseGuideActivity extends FrameActivity {
         try {
             // 绑定跳过按钮
             View vSkipView = findViewById(R.id.tv_skip);
-            vSkipView.setOnClickListener(onStartListener());
+            vSkipView.setOnClickListener(v -> onStartListener());
             Field fmSkipView = bannerForeground.getClass().getDeclaredField("mSkipView");
             fmSkipView.setAccessible(true);
             fmSkipView.set(bannerForeground, vSkipView);
 
             // 绑定即刻使用按钮
             View vmEnterView = findViewById(R.id.tv_start);
-            vmEnterView.setOnClickListener(onStartListener());
+            vmEnterView.setOnClickListener(v -> onStartListener());
             Field fEnterView = bannerForeground.getClass().getDeclaredField("mEnterView");
             fEnterView.setAccessible(true);
             fEnterView.set(bannerForeground, vmEnterView);
@@ -112,9 +112,8 @@ public abstract class BaseGuideActivity extends FrameActivity {
     @NonNull
     protected abstract int[] setBackgroundRes();
 
-    @NonNull
+    @Nullable
     protected abstract int[] setForegroundRes();
 
-    @NonNull
-    protected abstract View.OnClickListener onStartListener();
+    protected abstract void onStartListener();
 }
