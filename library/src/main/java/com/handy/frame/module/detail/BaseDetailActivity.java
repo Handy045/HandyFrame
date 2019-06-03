@@ -121,7 +121,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
                     }
                 }
 
-                onTabSelectedListener(true, tab);
+                onTabSelectedListener(true, tab, entity);
             }
 
             @Override
@@ -132,7 +132,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
                     tab.setCustomView(entity.getViewNormal());
                 }
 
-                onTabSelectedListener(false, tab);
+                onTabSelectedListener(false, tab, entity);
             }
 
             @Override
@@ -241,5 +241,5 @@ public abstract class BaseDetailActivity extends FrameActivity {
     @NonNull
     protected abstract List<TabItemEntity> setTabItems();
 
-    protected abstract void onTabSelectedListener(boolean isSelected, TabLayout.Tab tab);
+    protected abstract void onTabSelectedListener(boolean isSelected, TabLayout.Tab tab, TabItemEntity entity);
 }
