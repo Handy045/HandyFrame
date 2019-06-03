@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="54dp"
-        android:background="@drawable/hf_default_btn_sc"
+        android:background="@drawable/hf_btn_sc"
         android:paddingLeft="@dimen/hf_distance_xxlarge"
         android:paddingTop="@dimen/hf_distance_slarge"
         android:paddingRight="@dimen/hf_distance_xxlarge"

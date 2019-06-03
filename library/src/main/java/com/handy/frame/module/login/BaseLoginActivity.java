@@ -125,7 +125,7 @@ public abstract class BaseLoginActivity extends FrameActivity {
                     return;
                 }
             }
-            onSigninListener(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
+            onLoginListener(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
         });
     }
 
@@ -133,5 +133,5 @@ public abstract class BaseLoginActivity extends FrameActivity {
     //  子类需要实现的抽象方法
     //============================================================
 
-    protected abstract void onSigninListener(String username, String password);
+    protected abstract void onLoginListener(String username, String password);
 }
