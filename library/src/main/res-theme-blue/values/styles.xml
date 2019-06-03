@@ -81,11 +81,18 @@
     <style name="HF_Btn_Style">
         <item name="android:minHeight">0dp</item>
         <item name="android:minWidth">0dp</item>
+        <item name="android:paddingLeft">@dimen/hf_distance_medium</item>
+        <item name="android:paddingRight">@dimen/hf_distance_medium</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/hf_black0</item>
-        <item name="android:background">@drawable/hf_default_btn_sc</item>
+        <item name="android:background">@drawable/hf_btn_sc</item>
         <item name="android:textSize">@dimen/hf_h2</item>
+    </style>
+
+    <style name="HF_Btn_Invalid_Style" parent="HF_Btn_Style">
+        <item name="android:clickable">false</item>
+        <item name="android:textColor">@color/hf_black0</item>
+        <item name="android:background">@drawable/hf_btn_invalid_sp_n</item>
     </style>
 
     <!--==================== 标签页按钮字体样式 ====================-->
