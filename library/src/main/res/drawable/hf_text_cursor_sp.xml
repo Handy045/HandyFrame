@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- EditText 光标样式（颜色、宽度） -->
-
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/hf_blue100" />
+    <solid android:color="@color/hf_color_theme" />
     <size android:width="2dp" />
 </shape>
