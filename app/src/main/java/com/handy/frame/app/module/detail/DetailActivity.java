@@ -67,7 +67,7 @@ public class DetailActivity extends BaseDetailActivity {
     }
 
     @Override
-    protected void onTabSelectedListener(boolean isSelected, TabLayout.Tab tab) {
+    protected void onTabSelectedListener(boolean isSelected, TabLayout.Tab tab, TabItemEntity entity) {
 
     }
 }
