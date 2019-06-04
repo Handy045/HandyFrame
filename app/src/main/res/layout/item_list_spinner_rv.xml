@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/hf_distance_medium"
+        android:paddingTop="@dimen/hf_distance_micro"
+        android:paddingRight="@dimen/hf_distance_medium"
+        android:paddingBottom="@dimen/hf_distance_micro">
+
+        <TextView
+            android:id="@+id/tv_type_title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/hf_distance_medium"
+            android:layout_marginRight="@dimen/hf_distance_medium"
+            android:paddingTop="@dimen/hf_distance_micro"
+            android:paddingBottom="@dimen/hf_distance_micro"
+            android:text="资源类型"
+            android:textColor="@color/hf_black90"
+            android:textSize="@dimen/hf_font_medium" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spn_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/tv_type_title1"
+            android:layout_alignBottom="@+id/tv_type_title1"
+            android:layout_toEndOf="@id/tv_type_title1"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/hf_distance_medium"
+        android:paddingTop="@dimen/hf_distance_micro"
+        android:paddingRight="@dimen/hf_distance_medium"
+        android:paddingBottom="@dimen/hf_distance_micro">
+
+        <TextView
+            android:id="@+id/tv_type_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/hf_distance_medium"
+            android:layout_marginRight="@dimen/hf_distance_medium"
+            android:paddingTop="@dimen/hf_distance_micro"
+            android:paddingBottom="@dimen/hf_distance_micro"
+            android:text="资源名称"
+            android:textColor="@color/hf_black90"
+            android:textSize="@dimen/hf_font_medium" />
+
+        <EditText
+            android:id="@+id/edt_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/tv_type_title2"
+            android:layout_alignBottom="@+id/tv_type_title2"
+            android:layout_toEndOf="@id/tv_type_title2"
+            android:background="@color/hf_black20"
+            android:gravity="end" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_del"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/hf_distance_medium"
+        android:layout_marginRight="@dimen/hf_distance_medium"
+        android:layout_marginBottom="@dimen/hf_distance_medium"
+        android:background="@drawable/hf_btn_sc"
+        android:minHeight="0dp"
+        android:padding="@dimen/hf_distance_small"
+        android:text="删除"
+        android:textColor="@color/hf_black0"
+        android:textSize="@dimen/hf_font_small" />
+</LinearLayout>
