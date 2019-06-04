@@ -5,13 +5,13 @@
     <!--=============================================-->
     <!--========== 字体大小 ==========-->
     <!-- 导航栏标题 -->
-    <dimen name="hf_h1">@dimen/sp_16</dimen>
+    <dimen name="hf_h1">@dimen/hf_sp_16</dimen>
     <!-- 列表标题、主要内容 -->
-    <dimen name="hf_h2">@dimen/sp_14</dimen>
+    <dimen name="hf_h2">@dimen/hf_sp_14</dimen>
     <!-- 次要内容、二级标题 -->
-    <dimen name="hf_h3">@dimen/sp_12</dimen>
+    <dimen name="hf_h3">@dimen/hf_sp_12</dimen>
     <!-- 深色背景上提示内容 -->
-    <dimen name="hf_h4">@dimen/sp_10</dimen>
+    <dimen name="hf_h4">@dimen/hf_sp_10</dimen>
 
     <!--=============================================-->
     <!--                系统默认尺寸                    -->
