@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/hf_img_login_bg">
 
+    <com.handy.widget.titlebar.HandyTitleBar
+        style="@style/HF_Titlebar_Style"
+        app:handy_statusBarBackgroundColor="@color/hf_transparent"
+        app:handy_titleBarBackground="@color/hf_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <RelativeLayout
         android:id="@+id/cl_logo"
         android:layout_width="0dp"
