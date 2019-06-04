@@ -93,7 +93,7 @@
     <!--==================================================-->
     <style name="HF_Btn_Style">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">@dimen/dp_34</item>
+        <item name="android:layout_height">@dimen/dp_33</item>
         <item name="android:minHeight">0dp</item>
         <item name="android:minWidth">0dp</item>
         <item name="android:paddingLeft">@dimen/dp_4</item>
