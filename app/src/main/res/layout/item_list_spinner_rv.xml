@@ -7,6 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/dp_8"
         android:paddingTop="@dimen/dp_2"
@@ -16,13 +17,10 @@
         <TextView
             android:id="@+id/tv_type_title1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dp_23"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="@dimen/dp_8"
-            android:layout_marginRight="@dimen/dp_8"
-            android:paddingTop="@dimen/dp_2"
-            android:paddingBottom="@dimen/dp_2"
             android:text="资源类型"
             android:textColor="@color/hf_black90"
             android:textSize="@dimen/hf_h2" />
@@ -30,10 +28,12 @@
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/spn_type"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/dp_23"
             android:layout_alignTop="@+id/tv_type_title1"
             android:layout_alignBottom="@+id/tv_type_title1"
             android:layout_toEndOf="@id/tv_type_title1"
+            android:dropDownVerticalOffset="@dimen/dp_26"
+            android:popupBackground="@color/hf_color_window"
             android:spinnerMode="dropdown" />
     </RelativeLayout>
 
@@ -50,11 +50,10 @@
         <TextView
             android:id="@+id/tv_type_title2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dp_23"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="@dimen/dp_8"
-            android:layout_marginRight="@dimen/dp_8"
             android:paddingTop="@dimen/dp_2"
             android:paddingBottom="@dimen/dp_2"
             android:text="资源名称"
@@ -64,7 +63,7 @@
         <EditText
             android:id="@+id/edt_type"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/dp_23"
             android:layout_alignTop="@+id/tv_type_title2"
             android:layout_alignBottom="@+id/tv_type_title2"
             android:layout_toEndOf="@id/tv_type_title2"
