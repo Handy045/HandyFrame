@@ -89,10 +89,11 @@
     <!--                      按钮样式                      -->
     <!--==================================================-->
     <style name="HF_Btn_Style">
+        <item name="android:layout_height">@dimen/dp_33</item>
         <item name="android:minHeight">0dp</item>
         <item name="android:minWidth">0dp</item>
-        <item name="android:paddingLeft">@dimen/hf_distance_medium</item>
-        <item name="android:paddingRight">@dimen/hf_distance_medium</item>
+        <item name="android:paddingLeft">@dimen/dp_4</item>
+        <item name="android:paddingRight">@dimen/dp_4</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/hf_black0</item>
         <item name="android:background">@drawable/hf_btn_sc</item>
