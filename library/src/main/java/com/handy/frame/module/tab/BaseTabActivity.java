@@ -226,6 +226,13 @@ public abstract class BaseTabActivity extends FrameActivity {
     //============================================================
 
     /**
+     * 获取标签栏控件
+     */
+    public TabLayout getTablayout() {
+        return tablayout;
+    }
+
+    /**
      * 设置TabLayou模式（TabLayout.MODE_FIXED、TabLayout.MODE_SCROLLABLE）
      */
     protected void setTabLayoutMode(int tabMode) {
