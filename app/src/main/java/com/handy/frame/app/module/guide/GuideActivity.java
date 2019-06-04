@@ -1,6 +1,7 @@
 package com.handy.frame.app.module.guide;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 
 import com.handy.basic.utils.IntentUtils;
 import com.handy.frame.app.R;
@@ -21,8 +22,9 @@ public class GuideActivity extends BaseGuideActivity {
         IntentUtils.openActivity(activity, GuideActivity.class, isFinish);
     }
 
+    @NonNull
     @Override
-    public int[] setBackgroundRes() {
+    protected int[] setBackgroundRes() {
         return new int[]{R.drawable.boco_img_guide_bg1, R.drawable.boco_img_guide_bg2, R.drawable.boco_img_guide_bg3};
     }
 
