@@ -17,7 +17,7 @@ android {
         javaCompileOptions {
             annotationProcessorOptions {
                 // 注意此处有顺序要求
-                arguments = [targetModuleName: "\'${getModuleName()}\'"]
+                arguments = [targetModuleName: getModuleName().replace("\"", "\'")]
             }
         }
 
@@ -34,7 +34,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", getModuleName(), "\"${getModuleName()}\""
+            buildConfigField "String", getModuleName().replace("\"", ""), getModuleName()
 
             minifyEnabled false  // 混淆
             zipAlignEnabled true    // Zipalign优化
@@ -44,7 +44,7 @@ android {
         }
 
         release {
-            buildConfigField "String", getModuleName(), "\"${getModuleName()}\""
+            buildConfigField "String", getModuleName().replace("\"", ""), getModuleName()
 
             minifyEnabled false  // 混淆
             zipAlignEnabled true    // Zipalign优化
@@ -57,9 +57,9 @@ android {
             variant.outputs.all {
                 if (outputFileName.endsWith('.aar')) {
                     if (variant.buildType.name == 'debug') {
-                        outputFileName = "${getModuleName()}_V${defaultConfig.versionName}_${releaseTime()}_Debug.aar"
+                        outputFileName = "${getModuleName().replace("\"", "")}_V${defaultConfig.versionName}_${releaseTime()}_Debug.aar"
                     } else if (variant.buildType.name == 'release') {
-                        outputFileName = "${getModuleName()}_V${defaultConfig.versionName}_${releaseTime()}_Release.aar"
+                        outputFileName = "${getModuleName().replace("\"", "")}_V${defaultConfig.versionName}_${releaseTime()}_Release.aar"
                     }
                 }
             }
@@ -145,7 +145,7 @@ dependencies {
  * 获取当前Module名称
  */
 static String getModuleName() {
-    return "HandyFrame"
+    return "\"HandyFrame\""
 }
 
 /**
