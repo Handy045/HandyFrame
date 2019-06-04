@@ -12,7 +12,7 @@ import com.handy.basic.utils.IntentUtils;
 import com.handy.frame.app.module.detail.fragments.InfoFragment;
 import com.handy.frame.app.module.detail.fragments.ListFragment;
 import com.handy.frame.app.module.detail.fragments.OthersFragment;
-import com.handy.frame.module.detail.BaseDetailActivity;
+import com.handy.frame.module.tab.BaseTabActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
  * @date Created in 2019-05-31 15:55
  * @modified By liujie
  */
-public class DetailActivity extends BaseDetailActivity {
+public class DetailActivity extends BaseTabActivity {
     public static void doIntent(Activity activity, boolean isFinish) {
         IntentUtils.openActivity(activity, DetailActivity.class, isFinish);
     }

@@ -54,14 +54,6 @@
             android:theme="@style/HF_DefaultActivityTheme" />
 
         <activity
-            android:name=".module.detail.LineDetailActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
-
-        <activity
-            android:name=".module.detail.TaskDetailActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
-
-        <activity
             android:name=".module.detail.DetailActivity"
             android:theme="@style/HF_DefaultActivityTheme" />
     </application>
