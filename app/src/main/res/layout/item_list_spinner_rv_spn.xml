@@ -11,7 +11,7 @@
         android:background="@color/hf_transparent"
         android:gravity="center"
         android:textColor="@color/hf_black90"
-        android:textSize="@dimen/hf_font_medium"
+        android:textSize="@dimen/hf_h2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

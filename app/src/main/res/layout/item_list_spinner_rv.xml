@@ -8,10 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/hf_distance_medium"
-        android:paddingTop="@dimen/hf_distance_micro"
-        android:paddingRight="@dimen/hf_distance_medium"
-        android:paddingBottom="@dimen/hf_distance_micro">
+        android:paddingLeft="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_2">
 
         <TextView
             android:id="@+id/tv_type_title1"
@@ -19,13 +19,13 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="@dimen/hf_distance_medium"
-            android:layout_marginRight="@dimen/hf_distance_medium"
-            android:paddingTop="@dimen/hf_distance_micro"
-            android:paddingBottom="@dimen/hf_distance_micro"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingBottom="@dimen/dp_2"
             android:text="资源类型"
             android:textColor="@color/hf_black90"
-            android:textSize="@dimen/hf_font_medium" />
+            android:textSize="@dimen/hf_h2" />
 
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/spn_type"
@@ -40,11 +40,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/hf_distance_medium"
-        android:paddingTop="@dimen/hf_distance_micro"
-        android:paddingRight="@dimen/hf_distance_medium"
-        android:paddingBottom="@dimen/hf_distance_micro">
+        android:paddingLeft="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_2"
+        android:paddingRight="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_2">
 
         <TextView
             android:id="@+id/tv_type_title2"
@@ -52,13 +53,13 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="@dimen/hf_distance_medium"
-            android:layout_marginRight="@dimen/hf_distance_medium"
-            android:paddingTop="@dimen/hf_distance_micro"
-            android:paddingBottom="@dimen/hf_distance_micro"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingBottom="@dimen/dp_2"
             android:text="资源名称"
             android:textColor="@color/hf_black90"
-            android:textSize="@dimen/hf_font_medium" />
+            android:textSize="@dimen/hf_h2" />
 
         <EditText
             android:id="@+id/edt_type"
@@ -67,21 +68,18 @@
             android:layout_alignTop="@+id/tv_type_title2"
             android:layout_alignBottom="@+id/tv_type_title2"
             android:layout_toEndOf="@id/tv_type_title2"
-            android:background="@color/hf_black20"
-            android:gravity="end" />
+            android:background="@color/hf_black10"
+            android:gravity="end|center_vertical"
+            android:textSize="@dimen/hf_h2" />
     </RelativeLayout>
 
     <Button
         android:id="@+id/btn_del"
+        style="@style/HF_Btn_Style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/hf_distance_medium"
-        android:layout_marginRight="@dimen/hf_distance_medium"
-        android:layout_marginBottom="@dimen/hf_distance_medium"
-        android:background="@drawable/hf_btn_sc"
-        android:minHeight="0dp"
-        android:padding="@dimen/hf_distance_small"
-        android:text="删除"
-        android:textColor="@color/hf_black0"
-        android:textSize="@dimen/hf_font_small" />
+        android:layout_marginLeft="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginRight="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:text="删除" />
 </LinearLayout>
