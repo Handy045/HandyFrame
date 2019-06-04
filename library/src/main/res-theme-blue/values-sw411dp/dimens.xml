@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <dimen name="hf_h1">@dimen/sp_16</dimen>
-    <dimen name="hf_h2">@dimen/sp_14</dimen>
-    <dimen name="hf_h3">@dimen/sp_12</dimen>
-    <dimen name="hf_h4">@dimen/sp_10</dimen>
+    <dimen name="hf_h1">@dimen/hf_sp_16</dimen>
+    <dimen name="hf_h2">@dimen/hf_sp_14</dimen>
+    <dimen name="hf_h3">@dimen/hf_sp_12</dimen>
+    <dimen name="hf_h4">@dimen/hf_sp_10</dimen>
     <dimen name="hf_dp_m_60">-68.5000dp</dimen>
     <dimen name="hf_dp_m_30">-34.2500dp</dimen>
     <dimen name="hf_dp_m_20">-22.8333dp</dimen>
