@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.handy.adapter.Adapter;
@@ -89,7 +88,6 @@ public class ListSpinnerActivity extends BaseListActivity<ListSpinnerActivity.It
                     }
                 });
 
-                helper.itemView.setOnClickListener(v -> ToastUtils.showShort(v.toString()));
                 helper.getView(R.id.btn_del).setOnClickListener(v -> remove(helper.getAdapterPosition()));
             }
         };
