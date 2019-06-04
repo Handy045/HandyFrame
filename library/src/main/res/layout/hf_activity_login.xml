@@ -28,8 +28,8 @@
 
         <ImageView
             android:id="@+id/iv_logo"
-            android:layout_width="@dimen/dp_144"
-            android:layout_height="@dimen/dp_81"
+            android:layout_width="@dimen/hf_dp_144"
+            android:layout_height="@dimen/hf_dp_81"
             android:layout_centerHorizontal="true"
             android:src="@drawable/hf_icon_login_logo"
             tools:ignore="ContentDescription" />
@@ -40,10 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_logo"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginTop="@dimen/hf_dp_8"
             android:text="综合资源"
             android:textColor="@color/hf_black0"
-            android:textSize="@dimen/sp_23" />
+            android:textSize="@dimen/hf_sp_23" />
     </RelativeLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -52,8 +52,8 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/dp_32"
-        android:paddingRight="@dimen/dp_32"
+        android:paddingLeft="@dimen/hf_dp_32"
+        android:paddingRight="@dimen/hf_dp_32"
         app:layout_constraintBottom_toTopOf="@id/btn_signin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -62,8 +62,8 @@
 
         <ImageView
             android:id="@+id/iv_username"
-            android:layout_width="@dimen/dp_20"
-            android:layout_height="@dimen/dp_20"
+            android:layout_width="@dimen/hf_dp_20"
+            android:layout_height="@dimen/hf_dp_20"
             android:layout_gravity="center_vertical"
             android:src="@drawable/hf_icon_login_user"
             app:layout_constraintBottom_toBottomOf="@id/edt_username"
@@ -76,14 +76,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginStart="@dimen/hf_dp_8"
             android:background="@color/hf_transparent"
             android:gravity="center_vertical"
             android:hint="请输入登录名"
             android:imeOptions="actionDone"
             android:inputType="text"
             android:lines="1"
-            android:padding="@dimen/dp_8"
+            android:padding="@dimen/hf_dp_8"
             android:textColor="@color/hf_black80"
             android:textColorHint="@color/hf_black40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
@@ -105,7 +105,7 @@
         <View
             android:id="@+id/line_center1"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_12"
+            android:layout_height="@dimen/hf_dp_12"
             android:background="@color/hf_transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -114,8 +114,8 @@
 
         <ImageView
             android:id="@+id/iv_password"
-            android:layout_width="@dimen/dp_20"
-            android:layout_height="@dimen/dp_20"
+            android:layout_width="@dimen/hf_dp_20"
+            android:layout_height="@dimen/hf_dp_20"
             android:layout_gravity="center_vertical"
             android:src="@drawable/hf_icon_login_safe"
             app:layout_constraintBottom_toBottomOf="@id/edt_password"
@@ -135,7 +135,7 @@
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:lines="1"
-            android:padding="@dimen/dp_8"
+            android:padding="@dimen/hf_dp_8"
             android:textColor="@color/hf_black80"
             android:textColorHint="@color/hf_black40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
@@ -157,7 +157,7 @@
         <View
             android:id="@+id/line_center2"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_12"
+            android:layout_height="@dimen/hf_dp_12"
             android:background="@color/hf_transparent"
             app:layout_constraintLeft_toLeftOf="@id/line_password"
             app:layout_constraintRight_toRightOf="@id/line_password"
@@ -167,8 +167,8 @@
             android:id="@+id/iv_verification"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginEnd="@dimen/dp_6"
-            android:padding="@dimen/dp_2"
+            android:layout_marginEnd="@dimen/hf_dp_6"
+            android:padding="@dimen/hf_dp_2"
             app:layout_constraintBottom_toBottomOf="@id/edt_verification"
             app:layout_constraintRight_toLeftOf="@id/edt_verification"
             app:layout_constraintTop_toTopOf="@id/edt_verification"
@@ -185,7 +185,7 @@
             android:imeOptions="actionDone"
             android:inputType="text"
             android:lines="1"
-            android:padding="@dimen/dp_6"
+            android:padding="@dimen/hf_dp_6"
             android:textSize="@dimen/hf_h2"
             app:layout_constraintRight_toRightOf="@id/line_username"
             app:layout_constraintTop_toBottomOf="@id/line_center2"
@@ -196,9 +196,9 @@
         android:id="@+id/btn_signin"
         style="@style/HF_Btn_Style"
         android:layout_width="0dp"
-        android:layout_marginLeft="@dimen/dp_13"
-        android:layout_marginRight="@dimen/dp_13"
-        android:layout_marginBottom="@dimen/dp_13"
+        android:layout_marginLeft="@dimen/hf_dp_13"
+        android:layout_marginRight="@dimen/hf_dp_13"
+        android:layout_marginBottom="@dimen/hf_dp_13"
         android:text="登  录"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

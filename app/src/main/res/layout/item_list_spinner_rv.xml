@@ -7,20 +7,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginTop="@dimen/hf_dp_4"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/dp_8"
-        android:paddingTop="@dimen/dp_2"
-        android:paddingRight="@dimen/dp_8"
-        android:paddingBottom="@dimen/dp_2">
+        android:paddingLeft="@dimen/hf_dp_8"
+        android:paddingTop="@dimen/hf_dp_2"
+        android:paddingRight="@dimen/hf_dp_8"
+        android:paddingBottom="@dimen/hf_dp_2">
 
         <TextView
             android:id="@+id/tv_type_title1"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_23"
+            android:layout_height="@dimen/hf_dp_23"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/hf_dp_8"
             android:text="资源类型"
             android:textColor="@color/hf_black90"
             android:textSize="@dimen/hf_h2" />
@@ -28,11 +28,11 @@
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/spn_type"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_23"
+            android:layout_height="@dimen/hf_dp_23"
             android:layout_alignTop="@+id/tv_type_title1"
             android:layout_alignBottom="@+id/tv_type_title1"
             android:layout_toEndOf="@id/tv_type_title1"
-            android:dropDownVerticalOffset="@dimen/dp_26"
+            android:dropDownVerticalOffset="@dimen/hf_dp_26"
             android:popupBackground="@color/hf_color_window"
             android:spinnerMode="dropdown" />
     </RelativeLayout>
@@ -40,22 +40,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginTop="@dimen/hf_dp_4"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/dp_8"
-        android:paddingTop="@dimen/dp_2"
-        android:paddingRight="@dimen/dp_8"
-        android:paddingBottom="@dimen/dp_2">
+        android:paddingLeft="@dimen/hf_dp_8"
+        android:paddingTop="@dimen/hf_dp_2"
+        android:paddingRight="@dimen/hf_dp_8"
+        android:paddingBottom="@dimen/hf_dp_2">
 
         <TextView
             android:id="@+id/tv_type_title2"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_23"
+            android:layout_height="@dimen/hf_dp_23"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="@dimen/dp_8"
-            android:paddingTop="@dimen/dp_2"
-            android:paddingBottom="@dimen/dp_2"
+            android:layout_marginEnd="@dimen/hf_dp_8"
+            android:paddingTop="@dimen/hf_dp_2"
+            android:paddingBottom="@dimen/hf_dp_2"
             android:text="资源名称"
             android:textColor="@color/hf_black90"
             android:textSize="@dimen/hf_h2" />
@@ -63,7 +63,7 @@
         <EditText
             android:id="@+id/edt_type"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_23"
+            android:layout_height="@dimen/hf_dp_23"
             android:layout_alignTop="@+id/tv_type_title2"
             android:layout_alignBottom="@+id/tv_type_title2"
             android:layout_toEndOf="@id/tv_type_title2"
@@ -76,9 +76,9 @@
         android:id="@+id/btn_del"
         style="@style/HF_Btn_Style"
         android:layout_width="match_parent"
-        android:layout_marginLeft="@dimen/dp_8"
-        android:layout_marginTop="@dimen/dp_4"
-        android:layout_marginRight="@dimen/dp_8"
-        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_marginLeft="@dimen/hf_dp_8"
+        android:layout_marginTop="@dimen/hf_dp_4"
+        android:layout_marginRight="@dimen/hf_dp_8"
+        android:layout_marginBottom="@dimen/hf_dp_8"
         android:text="删除" />
 </LinearLayout>
