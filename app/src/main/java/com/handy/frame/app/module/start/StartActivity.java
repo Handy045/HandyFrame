@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.handy.frame.app.R;
-import com.handy.frame.app.module.list.ListSpinnerActivity;
+import com.handy.frame.app.module.guide.GuideActivity;
 import com.handy.frame.base.FrameActivity;
 
 
@@ -32,6 +32,6 @@ public class StartActivity extends FrameActivity {
     @Override
     public void onPermissionSuccessHDB() {
         super.onPermissionSuccessHDB();
-        ListSpinnerActivity.doIntent(activity, true);
+        GuideActivity.doIntent(activity, true);
     }
 }
