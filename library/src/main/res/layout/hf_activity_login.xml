@@ -97,7 +97,7 @@
         <View
             android:id="@+id/line_center1"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_24"
+            android:layout_height="@dimen/dp_18"
             android:background="@color/hf_transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -149,7 +149,7 @@
         <View
             android:id="@+id/line_center2"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_24"
+            android:layout_height="@dimen/dp_18"
             android:background="@color/hf_transparent"
             app:layout_constraintLeft_toLeftOf="@id/line_password"
             app:layout_constraintRight_toRightOf="@id/line_password"
