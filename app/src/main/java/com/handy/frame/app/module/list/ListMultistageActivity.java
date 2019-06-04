@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.blankj.utilcode.util.ObjectUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.handy.basic.utils.IntentUtils;
@@ -48,46 +49,51 @@ public class ListMultistageActivity extends BaseListActivity<String> {
         add("MMM");
         add("NNN");
     }};
-    private Map<String, List<String>> listData2 = new HashMap<String, List<String>>() {{
-        put("AAA", new ArrayList<String>() {{
+    private Map<String, List<String>> listData2 = new HashMap<String, List<String>>();
+
+    public static void doIntent(Activity activity, boolean isFinish) {
+        IntentUtils.openActivity(activity, ListMultistageActivity.class, isFinish);
+    }
+
+    @Override
+    public void initDataHDB() {
+        super.initDataHDB();
+
+        listData2.put("AAA", new ArrayList<String>() {{
             add("AAA111");
             add("AAA222");
             add("AAA333");
             add("AAA444");
             add("AAA555");
         }});
-        put("BBB", new ArrayList<String>() {{
+        listData2.put("BBB", new ArrayList<String>() {{
             add("BBB111");
             add("BBB222");
             add("BBB333");
             add("BBB444");
             add("BBB555");
         }});
-        put("CCC", new ArrayList<String>() {{
+        listData2.put("CCC", new ArrayList<String>() {{
             add("CCC111");
             add("CCC222");
             add("CCC333");
             add("CCC444");
             add("CCC555");
         }});
-        put("DDD", new ArrayList<String>() {{
+        listData2.put("DDD", new ArrayList<String>() {{
             add("DDD111");
             add("DDD222");
             add("DDD333");
             add("DDD444");
             add("DDD555");
         }});
-        put("EEE", new ArrayList<String>() {{
+        listData2.put("EEE", new ArrayList<String>() {{
             add("EEE111");
             add("EEE222");
             add("EEE333");
             add("EEE444");
             add("EEE555");
         }});
-    }};
-
-    public static void doIntent(Activity activity, boolean isFinish) {
-        IntentUtils.openActivity(activity, ListMultistageActivity.class, isFinish);
     }
 
     @NonNull
@@ -96,9 +102,7 @@ public class ListMultistageActivity extends BaseListActivity<String> {
         return new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_list_multistage_rv) {
             @Override
             protected void convert(BaseViewHolder helper, String item) {
-                if (type == 0) {
-                    helper.setText(R.id.tv_content, item);
-                }
+                helper.setText(R.id.tv_content, item);
             }
         };
     }
@@ -114,9 +118,6 @@ public class ListMultistageActivity extends BaseListActivity<String> {
             }
         } else if (ObjectUtils.isNotEmpty(clickContent)) {
             List<String> tempData = listData2.get(clickContent);
-            if (ObjectUtils.isEmpty(tempData)) {
-                return;
-            }
             if (srlState == SrlState.REFRESH) {
                 setAdapterData(tempData);
             } else if (srlState == SrlState.LOADMORE) {
@@ -130,7 +131,10 @@ public class ListMultistageActivity extends BaseListActivity<String> {
         super.onItemClickListener(view, adapterData, position);
         if (type == 0) {
             clickContent = adapterData.get(position);
-
+            if (ObjectUtils.isEmpty(listData2.get(clickContent))) {
+                return;
+            }
+            type = 1;
             getTitlebar().addRightAction(new Action() {
                 {
                     this.setText("返回上级", R.color.hf_black0, R.color.hf_orange100);
@@ -146,6 +150,8 @@ public class ListMultistageActivity extends BaseListActivity<String> {
             });
 
             doRefresh();
+        } else {
+            ToastUtils.showShort(adapterData.get(position));
         }
     }
 }
