@@ -38,7 +38,7 @@
     <TextView
         android:id="@+id/tv_skip"
         style="@style/HF_Btn_Style"
-        android:layout_margin="@dimen/dp_16"
+        android:layout_margin="@dimen/dp_8"
         android:background="@color/hf_transparent"
         android:ems="4"
         android:text="跳过 >"
