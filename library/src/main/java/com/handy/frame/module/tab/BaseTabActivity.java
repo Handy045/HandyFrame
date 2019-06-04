@@ -1,4 +1,4 @@
-package com.handy.frame.module.detail;
+package com.handy.frame.module.tab;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,7 +27,7 @@ import java.util.List;
  * @date Created in 2019-05-31 15:11
  * @modified By liujie
  */
-public abstract class BaseDetailActivity extends FrameActivity {
+public abstract class BaseTabActivity extends FrameActivity {
 
     HandyTitleBar titlebar;
     RelativeLayout rlTop;
@@ -38,7 +38,7 @@ public abstract class BaseDetailActivity extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hf_activity_detail);
+        setContentView(R.layout.hf_activity_tab);
         titlebar = findViewById(R.id.titlebar);
         rlTop = findViewById(R.id.rl_top);
         tablayout = findViewById(R.id.tablayout);
