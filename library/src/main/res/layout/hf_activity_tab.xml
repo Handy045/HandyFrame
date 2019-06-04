@@ -7,8 +7,6 @@
     <com.handy.widget.titlebar.HandyTitleBar
         android:id="@+id/titlebar"
         style="@style/HF_Titlebar_Style"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         app:handy_mainText="资源详情"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,7 +23,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dp_46"
+        android:layout_height="@dimen/dp_40"
         android:background="@color/hf_black0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -40,7 +38,7 @@
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dp_1"
         android:background="@color/hf_black30"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
