@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/iv_logo"
-            android:layout_width="@dimen/dp_160"
-            android:layout_height="@dimen/dp_90"
+            android:layout_width="@dimen/dp_144"
+            android:layout_height="@dimen/dp_81"
             android:layout_centerHorizontal="true"
             android:src="@drawable/hf_icon_login_logo"
             tools:ignore="ContentDescription" />
@@ -32,10 +32,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_logo"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_8"
             android:text="综合资源"
             android:textColor="@color/hf_black0"
-            android:textSize="@dimen/sp_28" />
+            android:textSize="@dimen/sp_23" />
     </RelativeLayout>
 
     <android.support.constraint.ConstraintLayout
@@ -54,8 +54,8 @@
 
         <ImageView
             android:id="@+id/iv_username"
-            android:layout_width="@dimen/dp_28"
-            android:layout_height="@dimen/dp_28"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
             android:layout_gravity="center_vertical"
             android:src="@drawable/hf_icon_login_user"
             app:layout_constraintBottom_toBottomOf="@id/edt_username"
@@ -79,7 +79,7 @@
             android:textColor="@color/hf_black80"
             android:textColorHint="@color/hf_black40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
-            android:textSize="@dimen/hf_h1"
+            android:textSize="@dimen/hf_h2"
             app:layout_constraintBottom_toTopOf="@id/line_username"
             app:layout_constraintLeft_toRightOf="@id/iv_username"
             app:layout_constraintRight_toRightOf="parent"
@@ -97,7 +97,7 @@
         <View
             android:id="@+id/line_center1"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_18"
+            android:layout_height="@dimen/dp_12"
             android:background="@color/hf_transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -106,8 +106,8 @@
 
         <ImageView
             android:id="@+id/iv_password"
-            android:layout_width="@dimen/dp_28"
-            android:layout_height="@dimen/dp_28"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
             android:layout_gravity="center_vertical"
             android:src="@drawable/hf_icon_login_safe"
             app:layout_constraintBottom_toBottomOf="@id/edt_password"
@@ -131,7 +131,7 @@
             android:textColor="@color/hf_black80"
             android:textColorHint="@color/hf_black40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
-            android:textSize="@dimen/hf_h1"
+            android:textSize="@dimen/hf_h2"
             app:layout_constraintLeft_toLeftOf="@id/edt_username"
             app:layout_constraintRight_toRightOf="@id/edt_username"
             app:layout_constraintTop_toBottomOf="@id/line_center1"
@@ -149,7 +149,7 @@
         <View
             android:id="@+id/line_center2"
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_18"
+            android:layout_height="@dimen/dp_12"
             android:background="@color/hf_transparent"
             app:layout_constraintLeft_toLeftOf="@id/line_password"
             app:layout_constraintRight_toRightOf="@id/line_password"
@@ -159,8 +159,8 @@
             android:id="@+id/iv_verification"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginEnd="@dimen/dp_8"
-            android:padding="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_6"
+            android:padding="@dimen/dp_2"
             app:layout_constraintBottom_toBottomOf="@id/edt_verification"
             app:layout_constraintRight_toLeftOf="@id/edt_verification"
             app:layout_constraintTop_toTopOf="@id/edt_verification"
@@ -188,7 +188,9 @@
         android:id="@+id/btn_signin"
         style="@style/HF_Btn_Style"
         android:layout_width="0dp"
-        android:layout_margin="@dimen/dp_13"
+        android:layout_marginLeft="@dimen/dp_13"
+        android:layout_marginRight="@dimen/dp_13"
+        android:layout_marginBottom="@dimen/dp_13"
         android:text="登  录"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
