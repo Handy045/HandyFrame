@@ -76,10 +76,11 @@
     <!--==================================================-->
     <style name="HF_Titlebar_Style">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/dp_48</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
         <item name="handy_isShowCustomStatusBar">true</item>
+        <item name="handy_titleBarHeight">@dimen/dp_48</item>
         <item name="handy_mainTextColor">@color/hf_black0</item>
         <item name="handy_subTextColor">@color/hf_black0</item>
         <item name="handy_titleBarBackground">@color/hf_color_theme</item>
