@@ -5,22 +5,19 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.ObjectUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.handy.basic.utils.IntentUtils;
-import com.handy.frame.api.BaseResultListener;
 import com.handy.frame.app.R;
 import com.handy.frame.module.list.BaseListActivity;
 import com.handy.widget.titlebar.entity.Action;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
-import org.json.JSONObject;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * 简单列表界面（多级查询）
@@ -30,13 +27,64 @@ import java.util.Objects;
  * @date Created in 2019-04-25 10:36
  * @modified By liujie
  */
-public class ListMultistageActivity extends BaseListActivity<Map<String, FieldInfo>> {
+public class ListMultistageActivity extends BaseListActivity<String> {
 
     private int type = 0;
+    private String clickContent = "";
 
-    private FieldQuery fieldQuery;
-    private IrmsEnumApi irmsEnumApi;
-    private List<Map<String, FieldInfo>> cacheAdapterData;
+    private List<String> listData1 = new ArrayList<String>() {{
+        add("AAA");
+        add("BBB");
+        add("CCC");
+        add("DDD");
+        add("EEE");
+        add("FFF");
+        add("GGG");
+        add("HHH");
+        add("III");
+        add("JJJ");
+        add("KKK");
+        add("LLL");
+        add("MMM");
+        add("NNN");
+    }};
+    private Map<String, List<String>> listData2 = new HashMap<String, List<String>>() {{
+        put("AAA", new ArrayList<String>() {{
+            add("AAA111");
+            add("AAA222");
+            add("AAA333");
+            add("AAA444");
+            add("AAA555");
+        }});
+        put("BBB", new ArrayList<String>() {{
+            add("BBB111");
+            add("BBB222");
+            add("BBB333");
+            add("BBB444");
+            add("BBB555");
+        }});
+        put("CCC", new ArrayList<String>() {{
+            add("CCC111");
+            add("CCC222");
+            add("CCC333");
+            add("CCC444");
+            add("CCC555");
+        }});
+        put("DDD", new ArrayList<String>() {{
+            add("DDD111");
+            add("DDD222");
+            add("DDD333");
+            add("DDD444");
+            add("DDD555");
+        }});
+        put("EEE", new ArrayList<String>() {{
+            add("EEE111");
+            add("EEE222");
+            add("EEE333");
+            add("EEE444");
+            add("EEE555");
+        }});
+    }};
 
     public static void doIntent(Activity activity, boolean isFinish) {
         IntentUtils.openActivity(activity, ListMultistageActivity.class, isFinish);
@@ -44,17 +92,12 @@ public class ListMultistageActivity extends BaseListActivity<Map<String, FieldIn
 
     @NonNull
     @Override
-    protected BaseQuickAdapter<Map<String, FieldInfo>, BaseViewHolder> setAdapter() {
-        return new BaseQuickAdapter<Map<String, FieldInfo>, BaseViewHolder>(R.layout.item_list_multistage_rv) {
+    protected BaseQuickAdapter<String, BaseViewHolder> setAdapter() {
+        return new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_list_multistage_rv) {
             @Override
-            protected void convert(BaseViewHolder helper, Map<String, FieldInfo> item) {
+            protected void convert(BaseViewHolder helper, String item) {
                 if (type == 0) {
-                    helper.setText(R.id.tv_name, Objects.requireNonNull(item.get("LABEL_CN")).getLabelCn());
-                    helper.getView(R.id.tv_content).setVisibility(View.GONE);
-                } else {
-                    helper.setText(R.id.tv_name, Objects.requireNonNull(item.get("LABEL_CN")).getLabelCn());
-                    helper.getView(R.id.tv_content).setVisibility(View.VISIBLE);
-                    helper.setText(R.id.tv_content, Objects.requireNonNull(item.get("CUID")).getLabelCn());
+                    helper.setText(R.id.tv_content, item);
                 }
             }
         };
@@ -62,38 +105,31 @@ public class ListMultistageActivity extends BaseListActivity<Map<String, FieldIn
 
     @Override
     protected void onSlidingListener(SrlState srlState, RefreshLayout refreshLayout) {
+        stopAnimation();
         if (type == 0) {
-            irmsEnumApi = new IrmsEnumApi(activity, "SYS_USER-8a380d9d4da6009101510e183dda6de0", "LOCAL_DISTRICT_CITY");
-        } else {
-            irmsEnumApi = new IrmsEnumApi(activity, "SYS_USER-8a380d9d4da6009101510e183dda6de0", "LOCAL_DISTRICT_TOWN", fieldQuery);
+            if (srlState == SrlState.REFRESH) {
+                setAdapterData(listData1);
+            } else if (srlState == SrlState.LOADMORE) {
+                addAdapterData(listData1);
+            }
+        } else if (ObjectUtils.isNotEmpty(clickContent)) {
+            List<String> tempData = listData2.get(clickContent);
+            if (ObjectUtils.isEmpty(tempData)) {
+                return;
+            }
+            if (srlState == SrlState.REFRESH) {
+                setAdapterData(tempData);
+            } else if (srlState == SrlState.LOADMORE) {
+                addAdapterData(tempData);
+            }
         }
-
-        irmsEnumApi.setResultListener(new BaseResultListener<List<Map<String, FieldInfo>>>() {
-            @Override
-            public void onSuccess(@NonNull List<Map<String, FieldInfo>> maps) {
-                stopAnimation();
-                if (srlState == SrlState.REFRESH) {
-                    setAdapterData(maps);
-                } else if (srlState == SrlState.LOADMORE) {
-                    addAdapterData(maps);
-                }
-            }
-
-            @Override
-            public void onFailed(@NonNull Throwable throwable) {
-                super.onFailed(throwable);
-                stopAnimation();
-            }
-        }).execute();
     }
 
     @Override
-    protected void onItemClickListener(@NonNull View view, List<Map<String, FieldInfo>> adapterData, int position) {
+    protected void onItemClickListener(@NonNull View view, List<String> adapterData, int position) {
         super.onItemClickListener(view, adapterData, position);
         if (type == 0) {
-            type = 1;
-            cacheAdapterData = new ArrayList<>(adapterData);
-            fieldQuery = new FieldQuery("RELATED_SPACE_CUID", OperatorType.EQ, Objects.requireNonNull(adapterData.get(position).get("CUID")).getLabelCn());
+            clickContent = adapterData.get(position);
 
             getTitlebar().addRightAction(new Action() {
                 {
@@ -103,15 +139,13 @@ public class ListMultistageActivity extends BaseListActivity<Map<String, FieldIn
                 @Override
                 public void onClick() {
                     type = 0;
-                    fieldQuery = null;
-                    setAdapterData(cacheAdapterData);
+                    clickContent = "";
+                    setAdapterData(listData1);
                     getTitlebar().removeRightActions();
                 }
             });
 
             doRefresh();
-        } else {
-            ToastUtils.showShort(JSONObject.toJSONString(adapterData.get(position)));
         }
     }
 }

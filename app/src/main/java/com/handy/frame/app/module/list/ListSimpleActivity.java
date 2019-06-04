@@ -5,17 +5,16 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.ToastUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.handy.basic.utils.IntentUtils;
+import com.handy.frame.app.R;
+import com.handy.frame.module.list.BaseListActivity;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
-import org.json.JSONObject;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 /**
  * 简单列表界面（单级查询）
@@ -25,9 +24,24 @@ import java.util.Objects;
  * @date Created in 2019-04-25 10:36
  * @modified By liujie
  */
-public class ListSimpleActivity extends BaseListActivity<Map<String, FieldInfo>> {
+public class ListSimpleActivity extends BaseListActivity<String> {
 
-    private IrmsEnumApi irmsEnumApi;
+    private List<String> listData1 = new ArrayList<String>() {{
+        add("AAA");
+        add("BBB");
+        add("CCC");
+        add("DDD");
+        add("EEE");
+        add("FFF");
+        add("GGG");
+        add("HHH");
+        add("III");
+        add("JJJ");
+        add("KKK");
+        add("LLL");
+        add("MMM");
+        add("NNN");
+    }};
 
     public static void doIntent(Activity activity, boolean isFinish) {
         IntentUtils.openActivity(activity, ListSimpleActivity.class, isFinish);
@@ -35,43 +49,28 @@ public class ListSimpleActivity extends BaseListActivity<Map<String, FieldInfo>>
 
     @NonNull
     @Override
-    protected BaseQuickAdapter<Map<String, FieldInfo>, BaseViewHolder> setAdapter() {
-        return new BaseQuickAdapter<Map<String, FieldInfo>, BaseViewHolder>(R.layout.item_list_simple_rv) {
+    protected BaseQuickAdapter<String, BaseViewHolder> setAdapter() {
+        return new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_list_simple_rv) {
             @Override
-            protected void convert(BaseViewHolder helper, Map<String, FieldInfo> item) {
-                helper.setText(R.id.tv_content, Objects.requireNonNull(item.get("LABEL_CN")).getLabelCn());
+            protected void convert(BaseViewHolder helper, String item) {
+                helper.setText(R.id.tv_content, item);
             }
         };
     }
 
     @Override
     protected void onSlidingListener(SrlState srlState, RefreshLayout refreshLayout) {
-        if (ObjectUtils.isEmpty(irmsEnumApi)) {
-            irmsEnumApi = new IrmsEnumApi(activity, "SYS_USER-8a380d9d4da6009101510e183dda6de0", "LOCAL_DISTRICT_CITY");
+        stopAnimation();
+        if (srlState == SrlState.REFRESH) {
+            setAdapterData(listData1);
+        } else if (srlState == SrlState.LOADMORE) {
+            addAdapterData(listData1);
         }
-
-        irmsEnumApi.setResultListener(new BaseResultListener<List<Map<String, FieldInfo>>>() {
-            @Override
-            public void onSuccess(@NonNull List<Map<String, FieldInfo>> maps) {
-                stopAnimation();
-                if (srlState == SrlState.REFRESH) {
-                    setAdapterData(maps);
-                } else if (srlState == SrlState.LOADMORE) {
-                    addAdapterData(maps);
-                }
-            }
-
-            @Override
-            public void onFailed(@NonNull Throwable throwable) {
-                super.onFailed(throwable);
-                stopAnimation();
-            }
-        }).execute();
     }
 
     @Override
-    protected void onItemClickListener(@NonNull View view, List<Map<String, FieldInfo>> adapterData, int position) {
+    protected void onItemClickListener(@NonNull View view, List<String> adapterData, int position) {
         super.onItemClickListener(view, adapterData, position);
-        ToastUtils.showShort(JSONObject.toJSONString(adapterData.get(position)));
+        ToastUtils.showShort(adapterData.get(position));
     }
 }
