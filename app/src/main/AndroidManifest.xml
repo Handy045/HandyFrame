@@ -27,7 +27,7 @@
 
         <activity
             android:name=".module.guide.GuideActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HF_FullScreenActivityTheme" />
 
         <activity
             android:name=".module.login.LoginActivity"
