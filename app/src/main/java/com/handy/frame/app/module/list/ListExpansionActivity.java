@@ -3,13 +3,13 @@ package com.handy.frame.app.module.list;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 
-import com.boco.groupclient.R;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.AbstractExpandableItem;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.handy.basic.utils.IntentUtils;
+import com.handy.frame.app.R;
 import com.handy.frame.module.list.BaseListActivity;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
