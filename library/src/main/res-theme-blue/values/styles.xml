@@ -92,7 +92,7 @@
     <style name="HF_Btn_Invalid_Style" parent="HF_Btn_Style">
         <item name="android:clickable">false</item>
         <item name="android:textColor">@color/hf_black0</item>
-        <item name="android:background">@drawable/hf_btn_invalid_sp_n</item>
+        <item name="android:background">@drawable/hf_btn_invalid_sp</item>
     </style>
 
     <!--==================== 标签页按钮字体样式 ====================-->
