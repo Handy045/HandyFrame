@@ -61,18 +61,18 @@
         app:layout_constraintVertical_weight="5">
 
         <ImageView
-            android:id="@+id/iv_username"
+            android:id="@+id/iv_account"
             android:layout_width="@dimen/hf_dp_20"
             android:layout_height="@dimen/hf_dp_20"
             android:layout_gravity="center_vertical"
             android:src="@drawable/hf_icon_login_user"
-            app:layout_constraintBottom_toBottomOf="@id/edt_username"
+            app:layout_constraintBottom_toBottomOf="@id/edt_account"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/edt_username"
+            app:layout_constraintTop_toTopOf="@id/edt_account"
             tools:ignore="ContentDescription" />
 
         <EditText
-            android:id="@+id/edt_username"
+            android:id="@+id/edt_account"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -88,19 +88,19 @@
             android:textColorHint="@color/hf_black40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
             android:textSize="@dimen/hf_h2"
-            app:layout_constraintBottom_toTopOf="@id/line_username"
-            app:layout_constraintLeft_toRightOf="@id/iv_username"
+            app:layout_constraintBottom_toTopOf="@id/line_account"
+            app:layout_constraintLeft_toRightOf="@id/iv_account"
             app:layout_constraintRight_toRightOf="parent"
             tools:ignore="Autofill" />
 
         <View
-            android:id="@+id/line_username"
+            android:id="@+id/line_account"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="@color/hf_color_theme"
             app:layout_constraintBottom_toTopOf="@id/line_center1"
-            app:layout_constraintLeft_toLeftOf="@id/iv_username"
-            app:layout_constraintRight_toRightOf="@id/edt_username" />
+            app:layout_constraintLeft_toLeftOf="@id/iv_account"
+            app:layout_constraintRight_toRightOf="@id/edt_account" />
 
         <View
             android:id="@+id/line_center1"
@@ -119,8 +119,8 @@
             android:layout_gravity="center_vertical"
             android:src="@drawable/hf_icon_login_safe"
             app:layout_constraintBottom_toBottomOf="@id/edt_password"
-            app:layout_constraintLeft_toLeftOf="@id/iv_username"
-            app:layout_constraintRight_toRightOf="@id/iv_username"
+            app:layout_constraintLeft_toLeftOf="@id/iv_account"
+            app:layout_constraintRight_toRightOf="@id/iv_account"
             app:layout_constraintTop_toTopOf="@id/edt_password"
             tools:ignore="ContentDescription" />
 
@@ -140,8 +140,8 @@
             android:textColorHint="@color/hf_black40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
             android:textSize="@dimen/hf_h2"
-            app:layout_constraintLeft_toLeftOf="@id/edt_username"
-            app:layout_constraintRight_toRightOf="@id/edt_username"
+            app:layout_constraintLeft_toLeftOf="@id/edt_account"
+            app:layout_constraintRight_toRightOf="@id/edt_account"
             app:layout_constraintTop_toBottomOf="@id/line_center1"
             tools:ignore="Autofill" />
 
@@ -187,7 +187,7 @@
             android:lines="1"
             android:padding="@dimen/hf_dp_6"
             android:textSize="@dimen/hf_h2"
-            app:layout_constraintRight_toRightOf="@id/line_username"
+            app:layout_constraintRight_toRightOf="@id/line_account"
             app:layout_constraintTop_toBottomOf="@id/line_center2"
             tools:ignore="Autofill" />
     </android.support.constraint.ConstraintLayout>
