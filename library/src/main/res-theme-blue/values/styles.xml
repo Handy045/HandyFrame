@@ -113,56 +113,50 @@
     <!--==================================================-->
     <!--                    标签页样式                      -->
     <!--==================================================-->
-    <style name="HF_TabLayout_Style_White">
-        <item name="android:layout_width">0dp</item>
+
+    <style name="HF_TabLayout_Style_Theme">
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/hf_dp_40</item>
-        <item name="android:background">@color/hf_black0</item>
-        <item name="layout_constraintLeft_toLeftOf">parent</item>
-        <item name="layout_constraintRight_toRightOf">parent</item>
-        <item name="layout_constraintTop_toBottomOf">@id/titlebar</item>
-        <item name="tabIndicatorColor">@color/hf_color_theme</item>
+        <item name="android:background">@color/hf_color_theme</item>
+        <item name="tabIndicatorColor">@color/hf_color_theme_dark</item>
         <item name="tabIndicatorHeight">1dp</item>
         <item name="tabRippleColor">@null</item>
-        <item name="tabSelectedTextColor">@color/hf_color_theme</item>
+        <item name="tabSelectedTextColor">@color/hf_black0</item>
         <item name="tabTextAppearance">@style/HF_TabItem_Text_Style</item>
+        <item name="tabTextColor">@color/hf_black0</item>
+    </style>
+
+    <style name="HF_TabLayout_Style_White" parent="HF_TabLayout_Style_Theme">
+        <item name="android:background">@color/hf_black0</item>
+        <item name="tabIndicatorColor">@color/hf_color_theme</item>
+        <item name="tabSelectedTextColor">@color/hf_color_theme</item>
         <item name="tabTextColor">@color/hf_black80</item>
     </style>
 
-    <style name="HF_TabLayout_Style_Theme">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">@dimen/hf_dp_40</item>
+    <style name="HF_TabLayout_Sub_Style_Theme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/hf_dp_34</item>
         <item name="android:background">@color/hf_color_theme</item>
-        <item name="layout_constraintLeft_toLeftOf">parent</item>
-        <item name="layout_constraintRight_toRightOf">parent</item>
-        <item name="layout_constraintTop_toBottomOf">@id/titlebar</item>
         <item name="tabIndicatorColor">@color/hf_color_theme_dark</item>
         <item name="tabIndicatorHeight">1dp</item>
         <item name="tabRippleColor">@null</item>
         <item name="tabSelectedTextColor">@color/hf_black0</item>
-        <item name="tabTextAppearance">@style/HF_TabItem_Text_Style</item>
+        <item name="tabTextAppearance">@style/HF_TabItem_Sub_Text_Style</item>
         <item name="tabTextColor">@color/hf_black0</item>
     </style>
 
-    <style name="HF_TabLayout_Style_Sub_Transparent">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">@dimen/hf_dp_34</item>
-        <item name="android:background">@color/hf_transparent</item>
-        <item name="layout_constraintLeft_toLeftOf">parent</item>
-        <item name="layout_constraintRight_toRightOf">parent</item>
-        <item name="layout_constraintTop_toBottomOf">@id/titlebar</item>
-        <item name="tabIndicatorColor">@color/hf_color_theme_dark</item>
-        <item name="tabIndicatorHeight">1dp</item>
-        <item name="tabRippleColor">@null</item>
-        <item name="tabSelectedTextColor">@color/hf_black0</item>
-        <item name="tabTextAppearance">@style/HF_TabItem_Text_Style_Sub</item>
-        <item name="tabTextColor">@color/hf_black0</item>
+    <style name="HF_TabLayout_Sub_Style_White" parent="HF_TabLayout_Sub_Style_Theme">
+        <item name="android:background">@color/hf_black0</item>
+        <item name="tabIndicatorColor">@color/hf_color_theme</item>
+        <item name="tabSelectedTextColor">@color/hf_color_theme</item>
+        <item name="tabTextColor">@color/hf_black80</item>
     </style>
 
     <style name="HF_TabItem_Text_Style">
         <item name="android:textSize">@dimen/hf_h2</item>
     </style>
 
-    <style name="HF_TabItem_Text_Style_Sub">
+    <style name="HF_TabItem_Sub_Text_Style">
         <item name="android:textSize">@dimen/hf_h3</item>
     </style>
 </resources>
