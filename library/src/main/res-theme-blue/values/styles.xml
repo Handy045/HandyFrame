@@ -135,7 +135,7 @@
 
     <style name="HF_TabLayout_Sub_Style_Theme">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/hf_dp_34</item>
+        <item name="android:layout_height">@dimen/hf_dp_36</item>
         <item name="android:background">@color/hf_color_theme</item>
         <item name="tabIndicatorColor">@color/hf_color_theme_dark</item>
         <item name="tabIndicatorHeight">1dp</item>
