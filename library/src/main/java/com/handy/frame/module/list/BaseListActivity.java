@@ -1,6 +1,7 @@
 package com.handy.frame.module.list;
 
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
@@ -69,7 +70,7 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentViewHDB(R.layout.hf_activity_list);
+        setContentViewHDB(resetContentView(R.layout.hf_activity_list));
         titlebar = findViewById(R.id.titlebar);
         rlTop = findViewById(R.id.rl_top);
         rvList = findViewById(R.id.rv_list);
@@ -243,6 +244,14 @@ public abstract class BaseListActivity<T> extends FrameActivity {
      */
     protected void onItemClickListener(@NonNull View view, List<T> adapterData, int position) {
 
+    }
+
+    //============================================================
+    //  功能开放
+    //============================================================
+
+    protected int resetContentView(@LayoutRes int layoutResId) {
+        return layoutResId;
     }
 
     //============================================================

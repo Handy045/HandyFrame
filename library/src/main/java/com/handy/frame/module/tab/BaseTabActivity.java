@@ -2,6 +2,7 @@ package com.handy.frame.module.tab;
 
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -41,7 +42,7 @@ public abstract class BaseTabActivity extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentViewHDB(R.layout.hf_activity_tab);
+        setContentViewHDB(resetContentView(R.layout.hf_activity_tab));
         titlebar = findViewById(R.id.titlebar);
         rlTop = findViewById(R.id.rl_top);
         tablayout = findViewById(R.id.tablayout);
@@ -189,8 +190,12 @@ public abstract class BaseTabActivity extends FrameActivity {
     }
 
     //============================================================
-    //  UI 功能开放
+    //  功能开放
     //============================================================
+
+    protected int resetContentView(@LayoutRes int layoutResId) {
+        return layoutResId;
+    }
 
     /**
      * 设置顶部菜单布局控件，可填充过滤条件

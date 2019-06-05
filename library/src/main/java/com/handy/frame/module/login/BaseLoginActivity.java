@@ -2,6 +2,7 @@ package com.handy.frame.module.login;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.view.View;
@@ -58,7 +59,7 @@ public abstract class BaseLoginActivity extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentViewHDB(R.layout.hf_activity_login);
+        setContentViewHDB(resetContentView(R.layout.hf_activity_login));
         ivLogo = findViewById(R.id.iv_logo);
         tvAppname = findViewById(R.id.tv_appname);
         clLogo = findViewById(R.id.cl_logo);
@@ -127,6 +128,14 @@ public abstract class BaseLoginActivity extends FrameActivity {
             }
             onLoginListener(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
         });
+    }
+
+    //============================================================
+    //  功能开放
+    //============================================================
+
+    protected int resetContentView(@LayoutRes int layoutResId) {
+        return layoutResId;
     }
 
     //============================================================
