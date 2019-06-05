@@ -120,7 +120,7 @@
         <item name="android:background">@color/hf_color_theme</item>
         <item name="tabMode">fixed</item>
         <item name="tabIndicatorColor">@color/hf_black0</item>
-        <item name="tabIndicatorHeight">1dp</item>
+        <item name="tabIndicatorHeight">@dimen/hf_dp_1</item>
         <item name="tabRippleColor">@null</item>
         <item name="tabSelectedTextColor">@color/hf_black0</item>
         <item name="tabTextAppearance">@style/HF_TabItem_Text_Style</item>
@@ -140,7 +140,7 @@
         <item name="android:background">@color/hf_color_theme</item>
         <item name="tabMode">fixed</item>
         <item name="tabIndicatorColor">@color/hf_black0</item>
-        <item name="tabIndicatorHeight">1dp</item>
+        <item name="tabIndicatorHeight">@dimen/hf_dp_1</item>
         <item name="tabRippleColor">@null</item>
         <item name="tabSelectedTextColor">@color/hf_black0</item>
         <item name="tabTextAppearance">@style/HF_TabItem_Text_Style_Sub</item>
