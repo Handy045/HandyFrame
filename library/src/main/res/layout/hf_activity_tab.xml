@@ -14,7 +14,7 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
-        style="@style/HF_TabLayout_Style_White"
+        style="@style/HF_TabLayout_Style_Theme"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titlebar" />
