@@ -1,7 +1,6 @@
 package com.handy.frame.module.tab;
 
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,10 +9,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-import com.blankj.utilcode.util.ConvertUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.handy.frame.R;
@@ -232,27 +229,6 @@ public abstract class BaseTabActivity extends FrameActivity {
     //============================================================
     //  TabLayout 功能开放
     //============================================================
-
-    /**
-     * 获取标签栏控件
-     */
-    public TabLayout setTabLayoutHeight(int height) {
-        if (height >= 0) {
-            ViewGroup.LayoutParams layoutParams = tablayout.getLayoutParams();
-            layoutParams.height = ConvertUtils.dp2px(height);
-            tablayout.setLayoutParams(layoutParams);
-        }
-        return tablayout;
-    }
-
-    public TabLayout setTabLayoutBackground(@DrawableRes int background) {
-        try {
-            tablayout.setBackgroundResource(background);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return tablayout;
-    }
 
     /**
      * 设置TabLayou模式（TabLayout.MODE_FIXED、TabLayout.MODE_SCROLLABLE）
