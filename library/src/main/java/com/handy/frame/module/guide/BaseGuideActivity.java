@@ -41,7 +41,7 @@ public abstract class BaseGuideActivity extends FrameActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.hf_activity_guide);
+        setContentViewHDB(R.layout.hf_activity_guide);
         bannerBackground = findViewById(R.id.banner_background);
         bannerForeground = findViewById(R.id.banner_foreground);
 

@@ -58,7 +58,7 @@ public abstract class BaseLoginActivity extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hf_activity_login);
+        setContentViewHDB(R.layout.hf_activity_login);
         ivLogo = findViewById(R.id.iv_logo);
         tvAppname = findViewById(R.id.tv_appname);
         clLogo = findViewById(R.id.cl_logo);

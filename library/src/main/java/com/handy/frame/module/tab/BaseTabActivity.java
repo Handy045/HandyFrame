@@ -41,7 +41,7 @@ public abstract class BaseTabActivity extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hf_activity_tab);
+        setContentViewHDB(R.layout.hf_activity_tab);
         titlebar = findViewById(R.id.titlebar);
         rlTop = findViewById(R.id.rl_top);
         tablayout = findViewById(R.id.tablayout);

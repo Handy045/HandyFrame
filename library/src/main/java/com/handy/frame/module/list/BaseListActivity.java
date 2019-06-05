@@ -69,7 +69,7 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hf_activity_list);
+        setContentViewHDB(R.layout.hf_activity_list);
         titlebar = findViewById(R.id.titlebar);
         rlTop = findViewById(R.id.rl_top);
         rvList = findViewById(R.id.rv_list);
