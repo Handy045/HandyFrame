@@ -138,6 +138,14 @@ public abstract class BaseLoginActivity extends FrameActivity {
         return layoutResId;
     }
 
+    public EditText getEdtUsername() {
+        return edtUsername;
+    }
+
+    public EditText getEdtPassword() {
+        return edtPassword;
+    }
+
     //============================================================
     //  子类需要实现的抽象方法
     //============================================================
