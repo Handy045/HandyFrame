@@ -38,9 +38,9 @@ public abstract class BaseLoginActivity extends FrameActivity {
     ImageView ivLogo;
     TextView tvAppname;
     RelativeLayout clLogo;
-    ImageView ivUsername;
-    EditText edtUsername;
-    View lineUsername;
+    ImageView ivAccount;
+    EditText edtAccount;
+    View lineAccount;
     View lineCenter1;
     ImageView ivPassword;
     EditText edtPassword;
@@ -63,9 +63,9 @@ public abstract class BaseLoginActivity extends FrameActivity {
         ivLogo = findViewById(R.id.iv_logo);
         tvAppname = findViewById(R.id.tv_appname);
         clLogo = findViewById(R.id.cl_logo);
-        ivUsername = findViewById(R.id.iv_username);
-        edtUsername = findViewById(R.id.edt_username);
-        lineUsername = findViewById(R.id.line_username);
+        ivAccount = findViewById(R.id.iv_account);
+        edtAccount = findViewById(R.id.edt_account);
+        lineAccount = findViewById(R.id.line_account);
         lineCenter1 = findViewById(R.id.line_center1);
         ivPassword = findViewById(R.id.iv_password);
         edtPassword = findViewById(R.id.edt_password);
@@ -105,12 +105,12 @@ public abstract class BaseLoginActivity extends FrameActivity {
         });
 
         btnSignin.setOnClickListener(v -> {
-            if (ObjectUtils.isEmpty(edtUsername.getText().toString())) {
-                ToastUtils.showShort("请输入登录账号");
+            if (ObjectUtils.isEmpty(edtAccount.getText().toString())) {
+                ToastUtils.showShort(edtAccount.getHint().toString());
                 return;
             }
             if (isNeedPassword && ObjectUtils.isEmpty(edtPassword.getText().toString())) {
-                ToastUtils.showShort("请输入登录密码");
+                ToastUtils.showShort(edtPassword.getHint().toString());
                 return;
             }
             if (isNeedVerification) {
@@ -126,7 +126,7 @@ public abstract class BaseLoginActivity extends FrameActivity {
                     return;
                 }
             }
-            onLoginListener(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
+            onLoginListener(edtAccount.getText().toString().trim(), edtPassword.getText().toString().trim());
         });
     }
 
@@ -138,8 +138,8 @@ public abstract class BaseLoginActivity extends FrameActivity {
         return layoutResId;
     }
 
-    public EditText getEdtUsername() {
-        return edtUsername;
+    public EditText getEdtAccount() {
+        return edtAccount;
     }
 
     public EditText getEdtPassword() {
