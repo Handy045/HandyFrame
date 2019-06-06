@@ -8,9 +8,11 @@ import android.widget.ImageView;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.handy.frame.R;
 import com.handy.frame.base.FrameActivity;
+import com.handy.frame.config.FrameConfig;
 
 import java.lang.reflect.Field;
 
@@ -37,6 +39,8 @@ public abstract class BaseGuideActivity extends FrameActivity {
     int[] foregroundResId;
     BGABanner bannerForeground;
 
+    protected boolean isSkip = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,16 +49,22 @@ public abstract class BaseGuideActivity extends FrameActivity {
         bannerBackground = findViewById(R.id.banner_background);
         bannerForeground = findViewById(R.id.banner_foreground);
 
-        backgroundResId = setBackgroundRes();
-        if (ObjectUtils.isEmpty(backgroundResId)) {
-            LogUtils.e("Please set the backgroundResId first");
-            ToastUtils.showShort("Please set the backgroundResId first");
-            finish();
-        }
+        isSkip = SPUtils.getInstance(FrameConfig.SP_NAME).getBoolean(FrameConfig.SP_KEY_ISSKIP_GUIDE, false);
+        if (isSkip) {
+            SPUtils.getInstance(FrameConfig.SP_NAME).put(FrameConfig.SP_KEY_ISSKIP_GUIDE, true);
+            onStartListener();
+        } else {
+            backgroundResId = setBackgroundRes();
+            if (ObjectUtils.isEmpty(backgroundResId)) {
+                LogUtils.e("Please set the backgroundResId first");
+                ToastUtils.showShort("Please set the backgroundResId first");
+                finish();
+            }
 
-        foregroundResId = setForegroundRes();
-        if (ObjectUtils.isEmpty(foregroundResId)) {
-            foregroundResId = new int[backgroundResId.length];
+            foregroundResId = setForegroundRes();
+            if (ObjectUtils.isEmpty(foregroundResId)) {
+                foregroundResId = new int[backgroundResId.length];
+            }
         }
     }
 
@@ -66,14 +76,20 @@ public abstract class BaseGuideActivity extends FrameActivity {
         try {
             // 绑定跳过按钮
             View vSkipView = findViewById(R.id.tv_skip);
-            vSkipView.setOnClickListener(v -> onStartListener());
+            vSkipView.setOnClickListener(v -> {
+                SPUtils.getInstance(FrameConfig.SP_NAME).put(FrameConfig.SP_KEY_ISSKIP_GUIDE, true);
+                onStartListener();
+            });
             Field fmSkipView = bannerForeground.getClass().getDeclaredField("mSkipView");
             fmSkipView.setAccessible(true);
             fmSkipView.set(bannerForeground, vSkipView);
 
             // 绑定即刻使用按钮
             View vmEnterView = findViewById(R.id.tv_start);
-            vmEnterView.setOnClickListener(v -> onStartListener());
+            vmEnterView.setOnClickListener(v -> {
+                SPUtils.getInstance(FrameConfig.SP_NAME).put(FrameConfig.SP_KEY_ISSKIP_GUIDE, true);
+                onStartListener();
+            });
             Field fEnterView = bannerForeground.getClass().getDeclaredField("mEnterView");
             fEnterView.setAccessible(true);
             fEnterView.set(bannerForeground, vmEnterView);
