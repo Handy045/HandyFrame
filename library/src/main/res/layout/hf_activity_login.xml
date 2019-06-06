@@ -96,7 +96,7 @@
         <View
             android:id="@+id/line_account"
             android:layout_width="0dp"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/hf_dp_2"
             android:background="@color/hf_color_theme"
             app:layout_constraintBottom_toTopOf="@id/line_center1"
             app:layout_constraintLeft_toLeftOf="@id/iv_account"
