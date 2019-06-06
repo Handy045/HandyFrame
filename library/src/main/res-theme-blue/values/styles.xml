@@ -54,7 +54,7 @@
         <item name="android:launchMode">standard</item>
         <item name="android:screenOrientation">portrait</item>
         <item name="android:theme">@style/HF_AppTheme</item>
-        <item name="android:windowSoftInputMode">adjustResize|stateAlwaysHidden</item>
+        <item name="android:windowSoftInputMode">adjustPan|stateAlwaysHidden</item>
     </style>
 
     <!-- 全屏Activity的主题 -->
