@@ -47,14 +47,14 @@ public class FrameConfig {
     /**
      * Sharepreference缓存文件名
      */
-    public static final String SP_NAME_COMMON = "SP_NAME_COMMON";
+    public static final String SP_NAME = "HandyFrame";
 
     //============================================================
     //  SPUtils相关配置键值
     //============================================================
 
     /**
-     * 引导界面初始化标记
+     * 是否跳过引导界面
      */
-    public static final String SP_KEY_APPLICATION_STARTED = "SP_KEY_APPLICATION_STARTED";
+    public static final String SP_KEY_ISSKIP_GUIDE = "SP_KEY_ISSKIP_GUIDE";
 }
