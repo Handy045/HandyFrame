@@ -4,7 +4,7 @@
     <!--                   Application样式                    -->
     <!--==================================================-->
     <!-- Application默认主题 -->
-    <style name="HF_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="HFStyle_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- colorPrimary 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色 -->
         <item name="colorPrimary">@color/hf_color_theme</item>
 
@@ -48,23 +48,23 @@
     <!--                   Activity样式                    -->
     <!--==================================================-->
     <!-- Activity默认主题 -->
-    <style name="HF_DefaultActivityTheme" parent="HF_AppTheme">
+    <style name="HFStyle_DefaultActivityTheme" parent="HFStyle_AppTheme">
         <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
         <item name="android:exported">false</item>
         <item name="android:launchMode">standard</item>
         <item name="android:screenOrientation">portrait</item>
-        <item name="android:theme">@style/HF_AppTheme</item>
+        <item name="android:theme">@style/HFStyle_AppTheme</item>
         <item name="android:windowSoftInputMode">adjustPan|stateAlwaysHidden</item>
     </style>
 
     <!-- 全屏Activity的主题 -->
-    <style name="HF_FullScreenActivityTheme" parent="HF_DefaultActivityTheme">
+    <style name="HFStyle_FullScreenActivityTheme" parent="HFStyle_DefaultActivityTheme">
         <!--设置全屏-->
         <item name="android:windowFullscreen">true</item>
     </style>
 
     <!-- 应用启动页(StartingWindow)的theme -->
-    <style name="HF_StartActivityTheme" parent="HF_FullScreenActivityTheme">
+    <style name="HFStyle_StartActivityTheme" parent="HFStyle_FullScreenActivityTheme">
         <!-- 可以设置成纯颜色（设置一个和Activity UI相似的背景） -->
         <item name="android:windowBackground">@color/hf_color_window</item>
         <!--也可以设置成一张图片 -->
@@ -74,7 +74,7 @@
     <!--==================================================-->
     <!--                     标题栏样式                     -->
     <!--==================================================-->
-    <style name="HF_Titlebar_Style">
+    <style name="HFStyle_Titlebar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:focusable">true</item>
@@ -91,7 +91,7 @@
     <!--==================================================-->
     <!--                      按钮样式                      -->
     <!--==================================================-->
-    <style name="HF_Btn_Style">
+    <style name="HFStyle_Btn">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/hf_dp_33</item>
         <item name="android:minHeight">0dp</item>
@@ -99,22 +99,24 @@
         <item name="android:paddingLeft">@dimen/hf_dp_4</item>
         <item name="android:paddingRight">@dimen/hf_dp_4</item>
         <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/hf_grey0</item>
         <item name="android:background">@drawable/hf_btn_sc</item>
         <item name="android:textSize">@dimen/hf_h2</item>
     </style>
 
-    <style name="HF_Btn_Invalid_Style" parent="HF_Btn_Style">
+    <style name="HFStyle_Btn_Invalid" parent="HFStyle_Btn">
         <item name="android:clickable">false</item>
         <item name="android:textColor">@color/hf_grey0</item>
         <item name="android:background">@drawable/hf_btn_invalid_sp</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <!--==================================================-->
     <!--                    标签页样式                      -->
     <!--==================================================-->
 
-    <style name="HF_TabLayout_Style_Theme">
+    <style name="HFStyle_TabLayout_Theme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/hf_dp_40</item>
         <item name="android:background">@color/hf_color_theme</item>
@@ -123,18 +125,18 @@
         <item name="tabIndicatorHeight">@dimen/hf_dp_1</item>
         <item name="tabRippleColor">@null</item>
         <item name="tabSelectedTextColor">@color/hf_grey0</item>
-        <item name="tabTextAppearance">@style/HF_TabItem_Text_Style</item>
+        <item name="tabTextAppearance">@style/HFStyle_TabItem_Text</item>
         <item name="tabTextColor">@color/hf_grey0</item>
     </style>
 
-    <style name="HF_TabLayout_Style_White" parent="HF_TabLayout_Style_Theme">
+    <style name="HFStyle_TabLayout_White" parent="HFStyle_TabLayout_Theme">
         <item name="android:background">@color/hf_grey0</item>
         <item name="tabIndicatorColor">@color/hf_color_theme</item>
         <item name="tabSelectedTextColor">@color/hf_color_theme</item>
         <item name="tabTextColor">@color/hf_grey80</item>
     </style>
 
-    <style name="HF_TabLayout_Style_Theme_Sub">
+    <style name="HFStyle_TabLayout_Theme_Sub">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/hf_dp_34</item>
         <item name="android:background">@color/hf_color_theme</item>
@@ -143,24 +145,26 @@
         <item name="tabIndicatorHeight">@dimen/hf_dp_1</item>
         <item name="tabRippleColor">@null</item>
         <item name="tabSelectedTextColor">@color/hf_grey0</item>
-        <item name="tabTextAppearance">@style/HF_TabItem_Text_Style_Sub</item>
+        <item name="tabTextAppearance">@style/HFStyle_TabItem_Text_Sub</item>
         <item name="tabTextColor">@color/hf_grey0</item>
     </style>
 
-    <style name="HF_TabLayout_Style_White_Sub" parent="HF_TabLayout_Style_Theme_Sub">
+    <style name="HFStyle_TabLayout_White_Sub" parent="HFStyle_TabLayout_Theme_Sub">
         <item name="android:background">@color/hf_grey0</item>
         <item name="tabIndicatorColor">@color/hf_color_theme</item>
         <item name="tabSelectedTextColor">@color/hf_color_theme</item>
         <item name="tabTextColor">@color/hf_grey80</item>
     </style>
 
-    <style name="HF_TabItem_Text_Style">
+    <style name="HFStyle_TabItem_Text">
         <item name="android:textSize">@dimen/hf_h2</item>
         <item name="android:textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="HF_TabItem_Text_Style_Sub">
+    <style name="HFStyle_TabItem_Text_Sub">
         <item name="android:textSize">@dimen/hf_h3</item>
         <item name="android:textAllCaps">false</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 </resources>
