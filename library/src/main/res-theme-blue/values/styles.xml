@@ -48,7 +48,7 @@
     <!--                   Activity样式                    -->
     <!--==================================================-->
     <!-- Activity默认主题 -->
-    <style name="HFStyle_DefaultActivityTheme" parent="HFStyle_AppTheme">
+    <style name="HFStyle_DefaultActivity" parent="HFStyle_AppTheme">
         <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
         <item name="android:exported">false</item>
         <item name="android:launchMode">standard</item>
@@ -58,13 +58,13 @@
     </style>
 
     <!-- 全屏Activity的主题 -->
-    <style name="HFStyle_FullScreenActivityTheme" parent="HFStyle_DefaultActivityTheme">
+    <style name="HFStyle_FullScreenActivity" parent="HFStyle_DefaultActivity">
         <!--设置全屏-->
         <item name="android:windowFullscreen">true</item>
     </style>
 
     <!-- 应用启动页(StartingWindow)的theme -->
-    <style name="HFStyle_StartActivityTheme" parent="HFStyle_FullScreenActivityTheme">
+    <style name="HFStyle_StartActivity" parent="HFStyle_FullScreenActivity">
         <!-- 可以设置成纯颜色（设置一个和Activity UI相似的背景） -->
         <item name="android:windowBackground">@color/hf_color_window</item>
         <!--也可以设置成一张图片 -->
