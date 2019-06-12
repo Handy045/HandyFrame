@@ -101,14 +101,14 @@
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textColor">@color/hf_grey0</item>
-        <item name="android:background">@drawable/hf_btn_sc</item>
+        <item name="android:background">@drawable/hf_sc_btn</item>
         <item name="android:textSize">@dimen/hf_h2</item>
     </style>
 
     <style name="HFStyle_Btn_Invalid" parent="HFStyle_Btn">
         <item name="android:clickable">false</item>
         <item name="android:textColor">@color/hf_grey0</item>
-        <item name="android:background">@drawable/hf_btn_invalid_sp</item>
+        <item name="android:background">@drawable/hf_sp_btn_invalid</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 

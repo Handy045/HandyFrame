@@ -12,42 +12,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:handy_mainText="功能列表"
-        style="@style/HF_Titlebar_Style"
+        style="@style/HFStyle_Titlebar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_detail"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/hf_dp_8"
         android:text="详情界面" />
 
     <Button
         android:id="@+id/btn_list_simple"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/hf_dp_8"
         android:text="普通列表界面" />
 
     <Button
         android:id="@+id/btn_list_spinner"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/hf_dp_8"
         android:text="嵌套列表界面" />
 
     <Button
         android:id="@+id/btn_list_multistage"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/hf_dp_8"
         android:text="多级查询列表界面" />
 
     <Button
         android:id="@+id/btn_list_expansion"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/hf_dp_8"
         android:text="可扩展列表界面" />

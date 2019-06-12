@@ -6,7 +6,7 @@
 
     <com.handy.widget.titlebar.HandyTitleBar
         android:id="@+id/titlebar"
-        style="@style/HF_Titlebar_Style"
+        style="@style/HFStyle_Titlebar"
         app:handy_mainText="资源详情"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -14,7 +14,7 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
-        style="@style/HF_TabLayout_Style_Theme"
+        style="@style/HFStyle_TabLayout_Theme"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titlebar" />

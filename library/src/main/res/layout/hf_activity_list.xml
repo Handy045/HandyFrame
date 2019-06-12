@@ -6,7 +6,7 @@
 
     <com.handy.widget.titlebar.HandyTitleBar
         android:id="@+id/titlebar"
-        style="@style/HF_Titlebar_Style"
+        style="@style/HFStyle_Titlebar"
         app:handy_mainText="资源列表"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

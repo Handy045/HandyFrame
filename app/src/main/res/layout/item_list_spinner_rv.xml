@@ -74,7 +74,7 @@
 
     <Button
         android:id="@+id/btn_del"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
         android:layout_marginLeft="@dimen/hf_dp_8"
         android:layout_marginTop="@dimen/hf_dp_4"

@@ -10,13 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/HF_AppTheme"
+        android:theme="@style/HFStyle_AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
             android:name=".module.start.StartActivity"
             android:exported="true"
-            android:theme="@style/HF_StartActivityTheme">
+            android:theme="@style/HFStyle_StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -27,35 +27,35 @@
 
         <activity
             android:name=".module.guide.GuideActivity"
-            android:theme="@style/HF_FullScreenActivityTheme" />
+            android:theme="@style/HFStyle_FullScreenActivity" />
 
         <activity
             android:name=".module.login.LoginActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HFStyle_DefaultActivity" />
 
         <activity
             android:name=".module.main.MainActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HFStyle_DefaultActivity" />
 
         <activity
             android:name=".module.list.ListSimpleActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HFStyle_DefaultActivity" />
 
         <activity
             android:name=".module.list.ListMultistageActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HFStyle_DefaultActivity" />
 
         <activity
             android:name=".module.list.ListExpansionActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HFStyle_DefaultActivity" />
 
         <activity
             android:name=".module.list.ListSpinnerActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HFStyle_DefaultActivity" />
 
         <activity
             android:name=".module.detail.DetailActivity"
-            android:theme="@style/HF_DefaultActivityTheme" />
+            android:theme="@style/HFStyle_DefaultActivity" />
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
     android:background="@drawable/hf_img_login_bg">
 
     <com.handy.widget.titlebar.HandyTitleBar
-        style="@style/HF_Titlebar_Style"
+        style="@style/HFStyle_Titlebar"
         app:handy_statusBarBackgroundColor="@color/hf_transparent"
         app:handy_titleBarBackground="@color/hf_transparent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -86,7 +86,7 @@
             android:padding="@dimen/hf_dp_8"
             android:textColor="@color/hf_grey80"
             android:textColorHint="@color/hf_grey40"
-            android:textCursorDrawable="@drawable/hf_text_cursor_sp"
+            android:textCursorDrawable="@drawable/hf_sp_text_cursor"
             android:textSize="@dimen/hf_h2"
             app:layout_constraintBottom_toTopOf="@id/line_account"
             app:layout_constraintLeft_toRightOf="@id/iv_account"
@@ -138,7 +138,7 @@
             android:padding="@dimen/hf_dp_8"
             android:textColor="@color/hf_grey80"
             android:textColorHint="@color/hf_grey40"
-            android:textCursorDrawable="@drawable/hf_text_cursor_sp"
+            android:textCursorDrawable="@drawable/hf_sp_text_cursor"
             android:textSize="@dimen/hf_h2"
             app:layout_constraintLeft_toLeftOf="@id/edt_account"
             app:layout_constraintRight_toRightOf="@id/edt_account"
@@ -178,7 +178,7 @@
             android:id="@+id/edt_verification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/hf_widget_sc"
+            android:background="@drawable/hf_sc_widget"
             android:ems="4"
             android:gravity="center"
             android:hint="验证码"
@@ -194,7 +194,7 @@
 
     <Button
         android:id="@+id/btn_signin"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_width="0dp"
         android:layout_marginLeft="@dimen/hf_dp_13"
         android:layout_marginRight="@dimen/hf_dp_13"

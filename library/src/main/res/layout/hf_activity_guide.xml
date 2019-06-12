@@ -19,7 +19,7 @@
             app:banner_pageChangeDuration="1000"
             app:banner_pointAutoPlayAble="false"
             app:banner_pointContainerBackground="@android:color/transparent"
-            app:banner_pointDrawable="@drawable/hf_guide_index_sc"
+            app:banner_pointDrawable="@drawable/hf_sc_guide_index"
             app:banner_pointTopBottomMargin="@dimen/hf_dp_15"
             app:banner_transitionEffect="fade" />
 
@@ -30,14 +30,14 @@
             app:banner_pageChangeDuration="1000"
             app:banner_pointAutoPlayAble="false"
             app:banner_pointContainerBackground="@android:color/transparent"
-            app:banner_pointDrawable="@drawable/hf_guide_index_sc"
+            app:banner_pointDrawable="@drawable/hf_sc_guide_index"
             app:banner_pointTopBottomMargin="@dimen/hf_dp_15"
             app:banner_transitionEffect="alpha" />
     </cn.bingoogolapple.bgabanner.BGAGuideLinkageLayout>
 
     <TextView
         android:id="@+id/tv_skip"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_margin="@dimen/hf_dp_8"
         android:background="@color/hf_transparent"
         android:ems="4"
@@ -47,7 +47,7 @@
 
     <TextView
         android:id="@+id/tv_start"
-        style="@style/HF_Btn_Style"
+        style="@style/HFStyle_Btn"
         android:layout_marginBottom="@dimen/hf_dp_54"
         android:ems="6"
         android:text="即刻使用"
