@@ -4,65 +4,77 @@
     <!--                 主体颜色                     -->
     <!--=============================================-->
     <!-- 主题色 -->
-    <color name="hf_color_theme">@color/hf_blue110</color>
+    <color name="hf_color_theme">@color/hf_blue50</color>
     <!-- 主题色_暗 -->
-    <color name="hf_color_theme_dark">@color/hf_blue110</color>
+    <color name="hf_color_theme_dark">@color/hf_blue60</color>
     <!-- 辅助色 -->
-    <color name="hf_color_assist">@color/hf_orange100</color>
+    <color name="hf_color_assist">@color/hf_orange50</color>
     <!-- 着重色 -->
-    <color name="hf_color_stress">@color/hf_red100</color>
+    <color name="hf_color_stress">@color/hf_red50</color>
     <!-- 窗口色 -->
-    <color name="hf_color_window">@color/hf_black0</color>
+    <color name="hf_color_window">@color/hf_grey0</color>
     <!-- 通用字体色 -->
     <color name="hf_color_font_universal">@color/hf_font100</color>
     <!-- 辅助字体色 -->
-    <color name="hf_color_font_secondary">@color/hf_black40</color>
+    <color name="hf_color_font_secondary">@color/hf_grey40</color>
 
     <!--=============================================-->
     <!--                  默认色卡                    -->
     <!--=============================================-->
-    <color name="hf_blue110">#1565C0</color>
-    <color name="hf_blue100">#1b82d1</color>
-    <color name="hf_blue50">#8dc0e8</color>
-    <color name="hf_blue30">#bad9f1</color>
-    <color name="hf_blue20">#d1e6f6</color>
-    <color name="hf_blue10">#e8f2fa</color>
-    <color name="hf_blue5">#f3f9fd</color>
 
-    <color name="hf_orange100">#f39927</color>
-    <color name="hf_orange50">#f9cc93</color>
-    <color name="hf_orange30">#fbe0be</color>
-    <color name="hf_orange20">#fdebd4</color>
-    <color name="hf_orange10">#fef5e9</color>
-    <color name="hf_orange5">#fefaf4</color>
+    <color name="hf_blue90">#125386</color>
+    <color name="hf_blue80">#145f99</color>
+    <color name="hf_blue70">#176bac</color>
+    <color name="hf_blue60">#1977be</color>
+    <color name="hf_blue50">#1b82d1</color>
+    <color name="hf_blue40">#2f8dd5</color>
+    <color name="hf_blue30">#4498d9</color>
+    <color name="hf_blue20">#59a4dd</color>
+    <color name="hf_blue10">#6dafe1</color>
 
-    <color name="hf_green100">#29ab91</color>
-    <color name="hf_green50">#94d5c8</color>
-    <color name="hf_green30">#bee6de</color>
-    <color name="hf_green20">#d4eee9</color>
-    <color name="hf_green10">#e9f6f4</color>
-    <color name="hf_green5">#f4fbf9</color>
+    <color name="hf_orange90">#9b6219</color>
+    <color name="hf_orange80">#b1701d</color>
+    <color name="hf_orange70">#c77e20</color>
+    <color name="hf_orange60">#dd8c24</color>
+    <color name="hf_orange50">#f39927</color>
+    <color name="hf_orange40">#f4a23a</color>
+    <color name="hf_orange30">#f5ab4e</color>
+    <color name="hf_orange20">#f6b461</color>
+    <color name="hf_orange10">#f7be75</color>
 
-    <color name="hf_red100">#f1594b</color>
-    <color name="hf_red50">#f8aca5</color>
-    <color name="hf_red30">#fbcdc9</color>
-    <color name="hf_red20">#fcdedb</color>
-    <color name="hf_red10">#feeeed</color>
-    <color name="hf_red5">#fef7f6</color>
+    <color name="hf_green90">#1b6d5d</color>
+    <color name="hf_green80">#1e7d6a</color>
+    <color name="hf_green70">#228c77</color>
+    <color name="hf_green60">#269c84</color>
+    <color name="hf_green50">#29ab91</color>
+    <color name="hf_green40">#3cb29b</color>
+    <color name="hf_green30">#4fbaa5</color>
+    <color name="hf_green20">#63c1af</color>
+    <color name="hf_green10">#76c9b9</color>
 
-    <color name="hf_black100">#000000</color>
-    <color name="hf_black90">#191919</color>
-    <color name="hf_black80">#333333</color>
-    <color name="hf_black70">#4c4c4c</color>
-    <color name="hf_black60">#666666</color>
-    <color name="hf_black50">#7f7f7f</color>
-    <color name="hf_black40">#999999</color>
-    <color name="hf_black30">#b2b2b2</color>
-    <color name="hf_black20">#cccccc</color>
-    <color name="hf_black10">#e5e5e5</color>
-    <color name="hf_black5">#f2f2f2</color>
-    <color name="hf_black2">#fafafa</color>
-    <color name="hf_black0">#ffffff</color>
+    <color name="hf_red90">#9a3930</color>
+    <color name="hf_red80">#b04137</color>
+    <color name="hf_red70">#c6493e</color>
+    <color name="hf_red60">#dc5145</color>
+    <color name="hf_red50">#f1594b</color>
+    <color name="hf_red40">#f2685b</color>
+    <color name="hf_red30">#f3776b</color>
+    <color name="hf_red20">#f4867c</color>
+    <color name="hf_red10">#f6958c</color>
+
+    <color name="hf_grey100">#000000</color>
+    <color name="hf_grey90">#191919</color>
+    <color name="hf_grey80">#333333</color>
+    <color name="hf_grey70">#4c4c4c</color>
+    <color name="hf_grey60">#666666</color>
+    <color name="hf_grey50">#7f7f7f</color>
+    <color name="hf_grey40">#999999</color>
+    <color name="hf_grey30">#b2b2b2</color>
+    <color name="hf_grey20">#cccccc</color>
+    <color name="hf_grey10">#e5e5e5</color>
+    <color name="hf_grey5">#f2f2f2</color>
+    <color name="hf_grey2">#fafafa</color>
+    <color name="hf_grey0">#ffffff</color>
 
     <color name="hf_transparent">#00000000</color>
 
