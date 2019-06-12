@@ -22,7 +22,7 @@
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/hf_dp_1"
+        android:layout_height="@dimen/hf_dp1"
         android:background="@color/hf_grey30"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

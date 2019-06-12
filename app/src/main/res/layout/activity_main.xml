@@ -21,35 +21,35 @@
         android:id="@+id/btn_detail"
         style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/hf_dp_8"
+        android:layout_margin="@dimen/hf_dp8"
         android:text="详情界面" />
 
     <Button
         android:id="@+id/btn_list_simple"
         style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/hf_dp_8"
+        android:layout_margin="@dimen/hf_dp8"
         android:text="普通列表界面" />
 
     <Button
         android:id="@+id/btn_list_spinner"
         style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/hf_dp_8"
+        android:layout_margin="@dimen/hf_dp8"
         android:text="嵌套列表界面" />
 
     <Button
         android:id="@+id/btn_list_multistage"
         style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/hf_dp_8"
+        android:layout_margin="@dimen/hf_dp8"
         android:text="多级查询列表界面" />
 
     <Button
         android:id="@+id/btn_list_expansion"
         style="@style/HFStyle_Btn"
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/hf_dp_8"
+        android:layout_margin="@dimen/hf_dp8"
         android:text="可扩展列表界面" />
 
 </LinearLayout>
