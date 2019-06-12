@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="@color/hf_transparent"
         android:padding="@dimen/hf_dp_8"
-        android:textColor="@color/hf_red100"
+        android:textColor="@color/hf_red50"
         android:textSize="@dimen/hf_h2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -22,7 +22,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="@dimen/hf_dp_8"
             android:text="资源类型"
-            android:textColor="@color/hf_black90"
+            android:textColor="@color/hf_grey90"
             android:textSize="@dimen/hf_h2" />
 
         <android.support.v7.widget.AppCompatSpinner
@@ -57,7 +57,7 @@
             android:paddingTop="@dimen/hf_dp_2"
             android:paddingBottom="@dimen/hf_dp_2"
             android:text="资源名称"
-            android:textColor="@color/hf_black90"
+            android:textColor="@color/hf_grey90"
             android:textSize="@dimen/hf_h2" />
 
         <EditText
@@ -67,7 +67,7 @@
             android:layout_alignTop="@+id/tv_type_title2"
             android:layout_alignBottom="@+id/tv_type_title2"
             android:layout_toEndOf="@id/tv_type_title2"
-            android:background="@color/hf_black10"
+            android:background="@color/hf_grey10"
             android:gravity="end|center_vertical"
             android:textSize="@dimen/hf_h2" />
     </RelativeLayout>

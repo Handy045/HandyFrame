@@ -137,7 +137,7 @@ public class ListMultistageActivity extends BaseListActivity<String> {
             type = 1;
             getTitlebar().addRightAction(new Action() {
                 {
-                    this.setText("返回上级", R.color.hf_black0, R.color.hf_orange100);
+                    this.setText("返回上级", R.color.hf_grey0, R.color.hf_orange50);
                 }
 
                 @Override

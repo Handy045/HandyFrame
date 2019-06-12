@@ -3,6 +3,6 @@
     <solid android:color="@color/hf_transparent" />
     <stroke
         android:width="@dimen/hf_dp_1"
-        android:color="@color/hf_black30" />
+        android:color="@color/hf_grey30" />
     <corners android:radius="@dimen/hf_dp_3" />
 </shape>

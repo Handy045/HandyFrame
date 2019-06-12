@@ -81,11 +81,11 @@
         <item name="android:focusableInTouchMode">true</item>
         <item name="handy_isShowCustomStatusBar">true</item>
         <item name="handy_titleBarHeight">@dimen/hf_dp_48</item>
-        <item name="handy_mainTextColor">@color/hf_black0</item>
-        <item name="handy_subTextColor">@color/hf_black0</item>
+        <item name="handy_mainTextColor">@color/hf_grey0</item>
+        <item name="handy_subTextColor">@color/hf_grey0</item>
         <item name="handy_titleBarBackground">@color/hf_color_theme</item>
         <item name="handy_statusBarBackgroundColor">@color/hf_color_theme</item>
-        <item name="handy_actionTextColor">@color/hf_black0</item>
+        <item name="handy_actionTextColor">@color/hf_grey0</item>
     </style>
 
     <!--==================================================-->
@@ -99,14 +99,14 @@
         <item name="android:paddingLeft">@dimen/hf_dp_4</item>
         <item name="android:paddingRight">@dimen/hf_dp_4</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/hf_black0</item>
+        <item name="android:textColor">@color/hf_grey0</item>
         <item name="android:background">@drawable/hf_btn_sc</item>
         <item name="android:textSize">@dimen/hf_h2</item>
     </style>
 
     <style name="HF_Btn_Invalid_Style" parent="HF_Btn_Style">
         <item name="android:clickable">false</item>
-        <item name="android:textColor">@color/hf_black0</item>
+        <item name="android:textColor">@color/hf_grey0</item>
         <item name="android:background">@drawable/hf_btn_invalid_sp</item>
     </style>
 
@@ -119,19 +119,19 @@
         <item name="android:layout_height">@dimen/hf_dp_40</item>
         <item name="android:background">@color/hf_color_theme</item>
         <item name="tabMode">fixed</item>
-        <item name="tabIndicatorColor">@color/hf_black0</item>
+        <item name="tabIndicatorColor">@color/hf_grey0</item>
         <item name="tabIndicatorHeight">@dimen/hf_dp_1</item>
         <item name="tabRippleColor">@null</item>
-        <item name="tabSelectedTextColor">@color/hf_black0</item>
+        <item name="tabSelectedTextColor">@color/hf_grey0</item>
         <item name="tabTextAppearance">@style/HF_TabItem_Text_Style</item>
-        <item name="tabTextColor">@color/hf_black0</item>
+        <item name="tabTextColor">@color/hf_grey0</item>
     </style>
 
     <style name="HF_TabLayout_Style_White" parent="HF_TabLayout_Style_Theme">
-        <item name="android:background">@color/hf_black0</item>
+        <item name="android:background">@color/hf_grey0</item>
         <item name="tabIndicatorColor">@color/hf_color_theme</item>
         <item name="tabSelectedTextColor">@color/hf_color_theme</item>
-        <item name="tabTextColor">@color/hf_black80</item>
+        <item name="tabTextColor">@color/hf_grey80</item>
     </style>
 
     <style name="HF_TabLayout_Style_Theme_Sub">
@@ -139,19 +139,19 @@
         <item name="android:layout_height">@dimen/hf_dp_34</item>
         <item name="android:background">@color/hf_color_theme</item>
         <item name="tabMode">fixed</item>
-        <item name="tabIndicatorColor">@color/hf_black0</item>
+        <item name="tabIndicatorColor">@color/hf_grey0</item>
         <item name="tabIndicatorHeight">@dimen/hf_dp_1</item>
         <item name="tabRippleColor">@null</item>
-        <item name="tabSelectedTextColor">@color/hf_black0</item>
+        <item name="tabSelectedTextColor">@color/hf_grey0</item>
         <item name="tabTextAppearance">@style/HF_TabItem_Text_Style_Sub</item>
-        <item name="tabTextColor">@color/hf_black0</item>
+        <item name="tabTextColor">@color/hf_grey0</item>
     </style>
 
     <style name="HF_TabLayout_Style_White_Sub" parent="HF_TabLayout_Style_Theme_Sub">
-        <item name="android:background">@color/hf_black0</item>
+        <item name="android:background">@color/hf_grey0</item>
         <item name="tabIndicatorColor">@color/hf_color_theme</item>
         <item name="tabSelectedTextColor">@color/hf_color_theme</item>
-        <item name="tabTextColor">@color/hf_black80</item>
+        <item name="tabTextColor">@color/hf_grey80</item>
     </style>
 
     <style name="HF_TabItem_Text_Style">

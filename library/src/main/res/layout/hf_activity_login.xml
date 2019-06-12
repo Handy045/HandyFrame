@@ -42,7 +42,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/hf_dp_8"
             android:text="综合资源"
-            android:textColor="@color/hf_black0"
+            android:textColor="@color/hf_grey0"
             android:textSize="@dimen/hf_sp_23" />
     </RelativeLayout>
 
@@ -84,8 +84,8 @@
             android:inputType="text"
             android:lines="1"
             android:padding="@dimen/hf_dp_8"
-            android:textColor="@color/hf_black80"
-            android:textColorHint="@color/hf_black40"
+            android:textColor="@color/hf_grey80"
+            android:textColorHint="@color/hf_grey40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
             android:textSize="@dimen/hf_h2"
             app:layout_constraintBottom_toTopOf="@id/line_account"
@@ -136,8 +136,8 @@
             android:inputType="textPassword"
             android:lines="1"
             android:padding="@dimen/hf_dp_8"
-            android:textColor="@color/hf_black80"
-            android:textColorHint="@color/hf_black40"
+            android:textColor="@color/hf_grey80"
+            android:textColorHint="@color/hf_grey40"
             android:textCursorDrawable="@drawable/hf_text_cursor_sp"
             android:textSize="@dimen/hf_h2"
             app:layout_constraintLeft_toLeftOf="@id/edt_account"
