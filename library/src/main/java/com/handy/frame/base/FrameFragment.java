@@ -1,6 +1,8 @@
 package com.handy.frame.base;
 
 
+import android.support.v7.app.AppCompatActivity;
+
 import com.handy.basic.app.BaseFragment;
 
 /**
@@ -11,6 +13,6 @@ import com.handy.basic.app.BaseFragment;
  * @date Created in 2018/12/3 16:21
  * @modified By LiuJie
  */
-public class FrameFragment<A> extends BaseFragment<A> {
+public class FrameFragment<A extends AppCompatActivity> extends BaseFragment<A> {
 
 }
