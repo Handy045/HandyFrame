@@ -11,6 +11,6 @@ import com.handy.basic.app.BaseFragment;
  * @date Created in 2018/12/3 16:21
  * @modified By LiuJie
  */
-public class FrameFragment extends BaseFragment {
+public class FrameFragment<A> extends BaseFragment<A> {
 
 }
