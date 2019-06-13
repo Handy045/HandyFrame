@@ -106,7 +106,7 @@ dependencies {
     //==============================
     // TODO HandyBase - https://github.com/Handy045/HandyBasic
     // TODO 已依赖：AndroidUtilCode、Bugly、EventBus、DBFlow、BGASwipeBackLayout
-    api 'com.github.Handy045:HandyBasic:1.1.0'
+    api 'com.github.Handy045:HandyBasic:1.1.1'
     annotationProcessor 'com.github.Raizlabs.DBFlow:dbflow-processor:4.2.4'
 
     //==============================
