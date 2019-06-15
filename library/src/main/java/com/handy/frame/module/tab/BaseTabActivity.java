@@ -39,7 +39,7 @@ public abstract class BaseTabActivity extends FrameActivity {
     /**
      * 如果当前界面有异步任务，需要稍后加载Fragment，可以将此设置为true，然后手动调用onLoadTabLayout()方法
      */
-    private boolean isLazyLoad = false;
+    public boolean isLazyLoadTabLayout = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public abstract class BaseTabActivity extends FrameActivity {
     public void initDataHDB() {
         super.initDataHDB();
 
-        if (!isLazyLoad) {
+        if (!isLazyLoadTabLayout) {
             onLoadTabLayout();
         }
     }
