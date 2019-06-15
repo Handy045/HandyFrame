@@ -36,6 +36,11 @@ public abstract class BaseTabActivity extends FrameActivity {
     ViewPager viewpager;
     RelativeLayout rlBottom;
 
+    /**
+     * 如果当前界面有异步任务，需要稍后加载Fragment，可以将此设置为true，然后手动调用onLoadTabLayout()方法
+     */
+    private boolean isLazyLoad = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +64,13 @@ public abstract class BaseTabActivity extends FrameActivity {
     @Override
     public void initDataHDB() {
         super.initDataHDB();
+
+        if (!isLazyLoad) {
+            onLoadTabLayout();
+        }
+    }
+
+    public void onLoadTabLayout() {
         List<TabItemEntity> tabItemEntities = setTabItems();
         if (ObjectUtils.isEmpty(tabItemEntities)) {
             LogUtils.e("lease set the abItems first.");
