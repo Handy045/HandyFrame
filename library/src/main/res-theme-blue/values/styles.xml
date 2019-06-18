@@ -123,6 +123,8 @@
         <item name="tabMode">fixed</item>
         <item name="tabIndicatorColor">@color/hf_grey0</item>
         <item name="tabIndicatorHeight">@dimen/hf_dp1</item>
+        <item name="tabPaddingEnd">@dimen/hf_dp0</item>
+        <item name="tabPaddingStart">@dimen/hf_dp0</item>
         <item name="tabRippleColor">@null</item>
         <item name="tabSelectedTextColor">@color/hf_grey0</item>
         <item name="tabTextAppearance">@style/HFStyle_TabItem_Text</item>
@@ -143,6 +145,8 @@
         <item name="tabMode">fixed</item>
         <item name="tabIndicatorColor">@color/hf_grey0</item>
         <item name="tabIndicatorHeight">@dimen/hf_dp1</item>
+        <item name="tabPaddingEnd">@dimen/hf_dp0</item>
+        <item name="tabPaddingStart">@dimen/hf_dp0</item>
         <item name="tabRippleColor">@null</item>
         <item name="tabSelectedTextColor">@color/hf_grey0</item>
         <item name="tabTextAppearance">@style/HFStyle_TabItem_Text_Sub</item>
