@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * @date Created in 2018/12/3 16:21
  * @modified By LiuJie
  */
-public class FrameApplication extends BaseApplication {
+public abstract class FrameApplication extends BaseApplication {
 
     {
         //更新权限扫描的权限集合
