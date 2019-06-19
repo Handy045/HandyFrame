@@ -6,6 +6,7 @@ import android.view.View;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.handy.basic.app.BaseActivity;
+import com.handy.basic.mvp.BasePresenter;
 import com.handy.frame.R;
 import com.handy.widget.titlebar.HandyTitleBar;
 import com.handy.widget.titlebar.entity.Action;
@@ -18,7 +19,7 @@ import com.handy.widget.titlebar.entity.Action;
  * @date Created in 2018/12/3 16:21
  * @modified By LiuJie
  */
-public class FrameActivity extends BaseActivity {
+public class FrameActivity<P extends BasePresenter> extends BaseActivity<P> {
 
     //============================================================
     //  初始化标题栏
