@@ -4,7 +4,7 @@
     package="com.handy.frame.app">
 
     <application
-        android:name="com.handy.frame.base.FrameApplication"
+        android:name=".base.LocalApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
