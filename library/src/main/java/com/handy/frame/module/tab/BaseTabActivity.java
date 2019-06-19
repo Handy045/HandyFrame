@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ObjectUtils;
+import com.handy.basic.mvp.BasePresenter;
 import com.handy.frame.R;
 import com.handy.frame.base.FrameActivity;
 import com.handy.widget.titlebar.HandyTitleBar;
@@ -28,7 +29,7 @@ import java.util.List;
  * @date Created in 2019-05-31 15:11
  * @modified By liujie
  */
-public abstract class BaseTabActivity extends FrameActivity {
+public abstract class BaseTabActivity<P extends BasePresenter> extends FrameActivity<P> {
 
     HandyTitleBar titlebar;
     RelativeLayout rlTop;
