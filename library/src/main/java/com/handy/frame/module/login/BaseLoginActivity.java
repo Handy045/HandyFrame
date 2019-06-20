@@ -3,6 +3,7 @@ package com.handy.frame.module.login;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.view.View;
@@ -144,6 +145,13 @@ public abstract class BaseLoginActivity extends FrameActivity {
 
     public EditText getEdtPassword() {
         return edtPassword;
+    }
+
+    public BaseLoginActivity setTvAppname(@NonNull String appName) {
+        if (ObjectUtils.isNotEmpty(appName)) {
+            tvAppname.setText(appName);
+        }
+        return this;
     }
 
     //============================================================
