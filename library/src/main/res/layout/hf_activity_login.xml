@@ -41,7 +41,7 @@
             android:layout_below="@id/iv_logo"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/hf_dp8"
-            android:text="综合资源"
+            android:text="@string/app_name"
             android:textColor="@color/hf_grey0"
             android:textSize="@dimen/hf_sp23" />
     </RelativeLayout>
