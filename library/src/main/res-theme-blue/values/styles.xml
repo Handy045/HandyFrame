@@ -23,9 +23,10 @@
         <!-- colorBackground 应用的背景色，popMenu的背景默认使用该颜色 -->
 
         <!-- colorAccent CheckBox，RadioButton，SwitchCompat等一般控件的选中效果默认采用该颜色 -->
-        <item name="colorAccent">@color/hf_color_stress</item>
+        <item name="colorAccent">@color/hf_color_theme</item>
 
         <!-- colorControlNormal CheckBox，RadioButton，SwitchCompat等默认状态的颜色。 -->
+        <item name="colorControlNormal">@color/hf_color_font_secondary</item>
 
         <!-- colorControlHighlight 控件按压时的色调 -->
 
