@@ -70,15 +70,12 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentViewHDB(resetContentView(R.layout.hf_activity_list));
+        setContentViewHDB(resetContentView());
         titlebar = findViewById(R.id.titlebar);
         rlTop = findViewById(R.id.rl_top);
         rvList = findViewById(R.id.rv_list);
         srlRefresh = findViewById(R.id.srl_refresh);
         rlBottom = findViewById(R.id.rl_bottom);
-
-        setLayoutManager(null);
-        setItemDecoration(null);
 
         if (ObjectUtils.isEmpty(adapter = setAdapter())) {
             LogUtils.e("please set the Adapter first!");
@@ -103,6 +100,7 @@ public abstract class BaseListActivity<T> extends FrameActivity {
 
         srlRefresh.setEnableLoadMore(isNeedLoadMore);
         if (isNeedLoadMore) {
+            srlRefresh.setEnableAutoLoadMore(isAutoLoadMore);
             srlRefresh.setRefreshFooter(new ClassicsFooter(context));
             srlRefresh.setOnLoadMoreListener(refreshLayout -> {
                 onSlidingListener(SrlState.LOADMORE, refreshLayout);
@@ -113,11 +111,11 @@ public abstract class BaseListActivity<T> extends FrameActivity {
             srlRefresh.autoRefresh();
         }
 
-        srlRefresh.setEnableAutoLoadMore(isAutoLoadMore);
-
         rvList.setAdapter(adapter);
-        rvList.setLayoutManager(layoutManager);
-        rvList.addItemDecoration(itemDecoration);
+        rvList.setLayoutManager(initLayoutManager());
+        if (ObjectUtils.isNotEmpty(initItemDecoration())) {
+            rvList.addItemDecoration(initItemDecoration());
+        }
         adapter.setOnItemClickListener((mAdapter, view, position) -> onItemClickListener(view, adapter.getData(), position));
 
         setTopMenuLayout(rlTop);
@@ -224,15 +222,16 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     /**
      * 设置RecyclerView排版方式
      */
-    protected void setLayoutManager(RecyclerView.LayoutManager layoutManager) {
-        this.layoutManager = ObjectUtils.isNotEmpty(layoutManager) ? layoutManager : new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+    @NonNull
+    protected RecyclerView.LayoutManager initLayoutManager() {
+        return new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
     }
 
     /**
      * 设置RecyclerView分割线
      */
-    protected void setItemDecoration(RecyclerView.ItemDecoration itemDecoration) {
-        this.itemDecoration = ObjectUtils.isNotEmpty(itemDecoration) ? itemDecoration : new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
+    protected RecyclerView.ItemDecoration initItemDecoration() {
+        return new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
     }
 
     /**
@@ -250,8 +249,9 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     //  功能开放
     //============================================================
 
-    protected int resetContentView(@LayoutRes int layoutResId) {
-        return layoutResId;
+    @LayoutRes
+    protected int resetContentView() {
+        return R.layout.hf_activity_list;
     }
 
     //============================================================

@@ -45,7 +45,7 @@ public abstract class BaseTabActivity<P extends BasePresenter> extends FrameActi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentViewHDB(resetContentView(R.layout.hf_activity_tab));
+        setContentViewHDB(resetContentView());
         titlebar = findViewById(R.id.titlebar);
         rlTop = findViewById(R.id.rl_top);
         tablayout = findViewById(R.id.tablayout);
@@ -203,8 +203,9 @@ public abstract class BaseTabActivity<P extends BasePresenter> extends FrameActi
     //  功能开放
     //============================================================
 
-    protected int resetContentView(@LayoutRes int layoutResId) {
-        return layoutResId;
+    @LayoutRes
+    protected int resetContentView() {
+        return R.layout.hf_activity_tab;
     }
 
     /**

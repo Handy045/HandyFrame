@@ -2,6 +2,7 @@ package com.handy.frame.module.start;
 
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
@@ -29,7 +30,7 @@ public abstract class BaseStartActivity extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hf_activity_start);
+        setContentView(resetContentView());
         ivBg = findViewById(R.id.iv_bg);
     }
 
@@ -37,6 +38,15 @@ public abstract class BaseStartActivity extends FrameActivity {
     public void onPermissionSuccessHDB() {
         super.onPermissionSuccessHDB();
         doNext();
+    }
+
+    //============================================================
+    //  功能开放
+    //============================================================
+
+    @LayoutRes
+    protected int resetContentView() {
+        return R.layout.hf_activity_start;
     }
 
     //============================================================

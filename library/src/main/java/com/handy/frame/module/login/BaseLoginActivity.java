@@ -60,7 +60,7 @@ public abstract class BaseLoginActivity extends FrameActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentViewHDB(resetContentView(R.layout.hf_activity_login));
+        setContentViewHDB(resetContentView());
         ivLogo = findViewById(R.id.iv_logo);
         tvAppname = findViewById(R.id.tv_appname);
         clLogo = findViewById(R.id.cl_logo);
@@ -135,8 +135,9 @@ public abstract class BaseLoginActivity extends FrameActivity {
     //  功能开放
     //============================================================
 
-    protected int resetContentView(@LayoutRes int layoutResId) {
-        return layoutResId;
+    @LayoutRes
+    protected int resetContentView() {
+        return R.layout.hf_activity_login;
     }
 
     public EditText getEdtAccount() {
