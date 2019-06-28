@@ -147,7 +147,7 @@ public abstract class BaseLoginActivity extends FrameActivity {
         return edtPassword;
     }
 
-    public BaseLoginActivity setTvAppname(@NonNull String appName) {
+    public BaseLoginActivity setAppname(@NonNull String appName) {
         if (ObjectUtils.isNotEmpty(appName)) {
             tvAppname.setText(appName);
         }
