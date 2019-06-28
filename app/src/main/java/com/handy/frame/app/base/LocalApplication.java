@@ -12,8 +12,4 @@ import com.handy.frame.base.FrameApplication;
  */
 public class LocalApplication extends FrameApplication {
 
-    @Override
-    public void onCreateHDB() {
-
-    }
 }

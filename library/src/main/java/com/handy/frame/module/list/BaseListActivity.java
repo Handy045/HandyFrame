@@ -63,8 +63,6 @@ public abstract class BaseListActivity<T> extends FrameActivity {
     public boolean isNeedRefresh = true;
     public boolean isNeedLoadMore = true;
 
-    private RecyclerView.LayoutManager layoutManager;
-    private RecyclerView.ItemDecoration itemDecoration;
     private BaseQuickAdapter<T, BaseViewHolder> adapter;
 
     @Override

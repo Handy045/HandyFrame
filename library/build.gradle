@@ -141,6 +141,10 @@ dependencies {
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
     // TODO SweetAlertDialog - https://github.com/Handy045/JointSweetAlertDialog
     api 'com.github.cazaea:sweet-alert-dialog:1.0.0'
+    // TODO Material - https://github.com/rey5137/material
+    implementation 'com.github.rey5137:material:1.2.5'
+    // TODO DialogUtil - https://github.com/hss01248/DialogUtil
+    implementation 'com.github.hss01248:DialogUtil:2.0.1'
 }
 
 /**
