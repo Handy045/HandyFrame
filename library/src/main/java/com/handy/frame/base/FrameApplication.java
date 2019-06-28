@@ -10,7 +10,10 @@ import com.blankj.utilcode.util.KeyboardUtils;
 import com.handy.basic.app.BaseApplication;
 import com.handy.basic.utils.PermissionsUtils;
 import com.handy.frame.util.SweetDialogClient;
+import com.hss01248.dialog.ActivityStackManager;
+import com.hss01248.dialog.StyledDialog;
 import com.raizlabs.android.dbflow.config.FlowManager;
+import com.rey.material.app.ThemeManager;
 
 import java.util.ArrayList;
 
@@ -40,6 +43,7 @@ public abstract class FrameApplication extends BaseApplication {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
             SweetDialogClient.register(activity);
+            ActivityStackManager.getInstance().addActivity(activity);
         }
 
         @Override
@@ -57,6 +61,7 @@ public abstract class FrameApplication extends BaseApplication {
             if (activity != null && activity.isFinishing()) {
                 SweetDialogClient.unregister();
                 KeyboardUtils.hideSoftInput(activity);
+                ActivityStackManager.getInstance().removeActivity(activity);
             }
         }
 
@@ -76,16 +81,18 @@ public abstract class FrameApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        // TODO: 2019-05-08 注册Activity生命周期事件回调接口
         try {
+            // TODO: 2019-05-08 注册Activity生命周期事件回调接口
             registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        // TODO: 2019-05-08 DBFlow 初始化
-        try {
+            // TODO: 2019-05-08 DBFlow 初始化
             FlowManager.init(this);
+
+            // TODO: 2019-06-28 DialogUtil 初始化
+            StyledDialog.init(getApplicationContext());
+
+            // TODO: 2019-06-28 Material 初始化
+            ThemeManager.init(this, 2, 0, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
