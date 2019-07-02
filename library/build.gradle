@@ -133,7 +133,7 @@ dependencies {
     //          控件库
     //==============================
     // TODO HandyTitleBar - https://github.com/Handy045/HandyTitleBar
-    api 'com.github.Handy045:HandyTitleBar:1.4.1'
+    api 'com.github.Handy045:HandyTitleBar:1.4.2'
     // TODO Banner - https://github.com/bingoogolapple/BGABanner-Android
     api 'cn.bingoogolapple:bga-banner:2.2.6'
     // TODO SmartRefreshLayout - https://github.com/scwang90/SmartRefreshLayout
