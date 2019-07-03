@@ -64,7 +64,7 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
                 } else {
                     emitter.onError(new Throwable(FrameConfig.PROMPT_NULL_NETWORK));
                 }
-            } catch (Throwable exception) {
+            } catch (Exception exception) {
                 LogUtils.e(exception);
                 emitter.onError(new Throwable(FrameConfig.PROMPT_ERROR_SERVER));
             } finally {
