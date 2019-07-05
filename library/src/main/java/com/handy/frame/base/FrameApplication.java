@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.KeyboardUtils;
 import com.handy.basic.app.BaseApplication;
 import com.handy.basic.utils.PermissionsUtils;
@@ -84,6 +86,14 @@ public abstract class FrameApplication extends BaseApplication {
         try {
             // TODO: 2019-05-08 注册Activity生命周期事件回调接口
             registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
+
+
+            // TODO: 2019-05-08 ARouter 初始化
+            if (AppUtils.isAppDebug()) {
+                ARouter.openLog();
+                ARouter.openDebug();
+            }
+            ARouter.init(this);
 
             // TODO: 2019-05-08 DBFlow 初始化
             FlowManager.init(this);
