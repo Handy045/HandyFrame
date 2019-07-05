@@ -36,6 +36,7 @@ android {
             annotationProcessorOptions {
                 // 注意此处有顺序要求
                 arguments = [targetModuleName: getModuleName().replace("\"", "\'")]
+                arguments = [AROUTER_MODULE_NAME: getModuleName().replace("\"", "\'")]
             }
         }
 
