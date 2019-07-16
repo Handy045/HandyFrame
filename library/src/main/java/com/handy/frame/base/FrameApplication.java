@@ -44,17 +44,20 @@ public abstract class FrameApplication extends BaseApplication {
     ActivityLifecycleCallbacks activityLifecycleCallbacks = new ActivityLifecycleCallbacks() {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+            StyledDialog.init(activity);
             SweetDialogClient.register(activity);
             ActivityStackManager.getInstance().addActivity(activity);
         }
 
         @Override
         public void onActivityStarted(Activity activity) {
+            StyledDialog.init(activity);
             SweetDialogClient.register(activity);
         }
 
         @Override
         public void onActivityResumed(Activity activity) {
+            StyledDialog.init(activity);
             SweetDialogClient.register(activity);
         }
 
@@ -97,9 +100,6 @@ public abstract class FrameApplication extends BaseApplication {
 
             // TODO: 2019-05-08 DBFlow 初始化
             FlowManager.init(this);
-
-            // TODO: 2019-06-28 DialogUtil 初始化
-            StyledDialog.init(getApplicationContext());
 
             // TODO: 2019-06-28 Material 初始化
             ThemeManager.init(this, 2, 0, null);
