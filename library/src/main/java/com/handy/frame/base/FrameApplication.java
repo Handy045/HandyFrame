@@ -90,7 +90,6 @@ public abstract class FrameApplication extends BaseApplication {
             // TODO: 2019-05-08 注册Activity生命周期事件回调接口
             registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
 
-
             // TODO: 2019-05-08 ARouter 初始化
             if (AppUtils.isAppDebug()) {
                 ARouter.openLog();
