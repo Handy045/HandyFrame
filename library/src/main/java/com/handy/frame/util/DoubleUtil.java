@@ -3,7 +3,7 @@ package com.handy.frame.util;
 import java.math.BigDecimal;
 
 /**
- * FileName
+ * Double计算工具类
  *
  * @author LiuJie https://github.com/Handy045
  * @description File Description
