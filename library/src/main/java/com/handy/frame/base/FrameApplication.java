@@ -9,6 +9,7 @@ import android.support.multidex.MultiDex;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.KeyboardUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.handy.basic.app.BaseApplication;
 import com.handy.basic.utils.PermissionsUtils;
 import com.handy.frame.util.SweetDialogClient;
@@ -18,6 +19,8 @@ import com.raizlabs.android.dbflow.config.FlowManager;
 import com.rey.material.app.ThemeManager;
 
 import java.util.ArrayList;
+
+import io.reactivex.plugins.RxJavaPlugins;
 
 
 /**
@@ -99,6 +102,9 @@ public abstract class FrameApplication extends BaseApplication {
 
             // TODO: 2019-05-08 DBFlow 初始化
             FlowManager.init(this);
+
+            // TODO: 2019-07-18 防止RxJava取消订阅后抛出的异常无法接收的处理
+            RxJavaPlugins.setErrorHandler(LogUtils::e);
 
             // TODO: 2019-06-28 Material 初始化
             ThemeManager.init(this, 2, 0, null);
