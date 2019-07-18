@@ -134,14 +134,26 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
         return new BaseDialogBuilder(activity);
     }
 
+    public String getServiceTag() {
+        return serviceTag;
+    }
+
     public BaseApiCreater<RESPONSE, RESULT> setServiceTag(String serviceTag) {
         this.serviceTag = serviceTag;
         return this;
     }
 
+    public String getProgressInfo() {
+        return progressInfo;
+    }
+
     public BaseApiCreater<RESPONSE, RESULT> setProgressInfo(String progressInfo) {
         this.progressInfo = progressInfo;
         return this;
+    }
+
+    public ResultListener<RESULT> getResultListener() {
+        return resultListener;
     }
 
     public BaseApiCreater<RESPONSE, RESULT> setResultListener(ResultListener<RESULT> resultListener) {
