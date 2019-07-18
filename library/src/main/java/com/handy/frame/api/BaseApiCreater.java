@@ -30,6 +30,7 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
 
     private AppCompatActivity activity;
 
+    private String serviceTag = "";
     private String progressInfo = null;
     private DialogListener dialogListener = null;
     private ResultListener<RESULT> resultListener = null;
@@ -59,12 +60,12 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
                         } catch (Throwable exception) {
                             LogUtils.e(exception);
                             if (!activity.isFinishing()) {
-                                emitter.onError(new Throwable(FrameConfig.PROMPT_ERROR_ANALYSIS));
+                                emitter.onError(new Throwable(serviceTag + FrameConfig.PROMPT_ERROR_ANALYSIS));
                             }
                         }
                     } else {
                         if (!activity.isFinishing()) {
-                            emitter.onError(new Throwable(FrameConfig.PROMPT_EMPTY_RESPONSE));
+                            emitter.onError(new Throwable(serviceTag + FrameConfig.PROMPT_ERROR_RESPONSE));
                         }
                     }
                 } else {
@@ -75,7 +76,7 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
             } catch (Exception exception) {
                 LogUtils.e(exception);
                 if (!activity.isFinishing()) {
-                    emitter.onError(new Throwable(FrameConfig.PROMPT_ERROR_SERVER));
+                    emitter.onError(new Throwable(serviceTag + FrameConfig.PROMPT_ERROR_SERVER));
                 }
             } finally {
                 if (!activity.isFinishing()) {
@@ -131,6 +132,11 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
     @Override
     public DialogListener initDialogBuilder(@NonNull AppCompatActivity activity) {
         return new BaseDialogBuilder(activity);
+    }
+
+    public BaseApiCreater<RESPONSE, RESULT> setServiceTag(String serviceTag) {
+        this.serviceTag = serviceTag;
+        return this;
     }
 
     public BaseApiCreater<RESPONSE, RESULT> setProgressInfo(String progressInfo) {
