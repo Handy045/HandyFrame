@@ -53,22 +53,34 @@ public abstract class BaseApiCreater<RESPONSE, RESULT> implements CreaterListene
                     RESPONSE response = callInterface(emitter);
                     if (response != null) {
                         try {
-                            checkResponse(emitter, response);
+                            if (!activity.isFinishing()) {
+                                checkResponse(emitter, response);
+                            }
                         } catch (Throwable exception) {
                             LogUtils.e(exception);
-                            emitter.onError(new Throwable(FrameConfig.PROMPT_ERROR_ANALYSIS));
+                            if (!activity.isFinishing()) {
+                                emitter.onError(new Throwable(FrameConfig.PROMPT_ERROR_ANALYSIS));
+                            }
                         }
                     } else {
-                        emitter.onError(new Throwable(FrameConfig.PROMPT_EMPTY_RESPONSE));
+                        if (!activity.isFinishing()) {
+                            emitter.onError(new Throwable(FrameConfig.PROMPT_EMPTY_RESPONSE));
+                        }
                     }
                 } else {
-                    emitter.onError(new Throwable(FrameConfig.PROMPT_NULL_NETWORK));
+                    if (!activity.isFinishing()) {
+                        emitter.onError(new Throwable(FrameConfig.PROMPT_NULL_NETWORK));
+                    }
                 }
             } catch (Exception exception) {
                 LogUtils.e(exception);
-                emitter.onError(new Throwable(FrameConfig.PROMPT_ERROR_SERVER));
+                if (!activity.isFinishing()) {
+                    emitter.onError(new Throwable(FrameConfig.PROMPT_ERROR_SERVER));
+                }
             } finally {
-                emitter.onComplete();
+                if (!activity.isFinishing()) {
+                    emitter.onComplete();
+                }
             }
         }).map(this::analyzeResponse).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).as(RxLife.as(activity)).subscribe(new Observer<RESULT>() {
             @Override
