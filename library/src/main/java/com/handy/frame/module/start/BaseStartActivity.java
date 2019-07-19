@@ -32,6 +32,9 @@ public abstract class BaseStartActivity extends FrameActivity {
         super.onCreate(savedInstanceState);
         setContentView(resetContentView());
         ivBg = findViewById(R.id.iv_bg);
+        if (setBackground() != 0) {
+            ivBg.setBackgroundResource(setBackground());
+        }
     }
 
     @Override
